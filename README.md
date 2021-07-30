@@ -24,7 +24,7 @@
       
       c) An example suite2P setting option. https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Software/Suite2P%20options/GCaMP6S_P2_C1_7.25Hz_MEC.npy.
       
-      d) Three DLC model configuration files: DLC1, DLC2, and DLC3. DLC1 was trained by vidoes recorded from bottom of transparent floors with 'nose', 'mouse', 'lefthand', 'righthand', 'leftleg', 'rightleg', 'tailbase', and 'bodycenter' extracted (https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Software/DLC%20model%20options/DLC1.yaml); DLC2 was trained by vidoes recorded from top of boxes with 'miniscope', 'leftear', 'rightear', 'bodycenter', and 'tailbase' extracted (https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Software/DLC%20model%20options/DLC2.yaml); DLC3 was trained by vidoes recorded from top of boxes with 'nose', 'leftear', 'rightear', 'bodycenter', and 'tailbase' extracted ().
+      d) Three DLC model configuration files: DLC1, DLC2, and DLC3.More details in https://github.com/WeijianZong/MINI2P_toolbox/wiki/DLCModels.mlapp.
       
       e) AnimalTracker.vi: a Labview pragram for recording animal behaviors and synchronizing with MINI2P imaging. More details in https://github.com/WeijianZong/MINI2P_toolbox/wiki/AnimalTracker.vi
 
