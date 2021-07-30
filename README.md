@@ -13,6 +13,7 @@
 ![image](https://user-images.githubusercontent.com/43905023/127703645-a6ea03ea-c1aa-4eaa-a9fd-1e6e75a082ed.png)
       
       b)  A list of requiered hardware to run complete freely-moving MINI2P recordings.
+      https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Hardware/Minimum%20hardware%20requirement.docx
 
 
 2) Software 
