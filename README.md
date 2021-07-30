@@ -18,7 +18,7 @@
 
 2) Software 
 
-      a) A list of requiered software to run complete freely-moving MINI2P recordings and analysis.
+      a) A list of requiered software to run complete freely-moving MINI2P recordings and analysis. https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Software/Minimum%20software%20requirement.docx
       
       b) An example suite2P setting option.
       
