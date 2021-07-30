@@ -1,4 +1,4 @@
-# MINI2P_toolbox
+# MINI2P freely-moving calcium imaging and spatial tuning analysis
  
 ## Project:
   MINI2P_toolbox
