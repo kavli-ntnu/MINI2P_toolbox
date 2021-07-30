@@ -6,7 +6,7 @@
 ## Description: 
   MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for buidling and using MINI2P to do freely-moving recording. MINI2P is an open-source miniature 2-photon microsocpe for fast high-resolution calcium imaging in freely-moving mice, published in Zong, et al.,"Large-scale two-photon calcium imaging in freely moving mice (2021)". With the materials provided in this toolbox, people can assemble, test the MINI2P system, set up the animal tracking system, process the MINI2P imaging data, extract neuronal activity from single cells, and combine the neuronal activity data and the tracking data together for user-depedent downsteam analysis. The multi-FOV stitching software is also included. The codes for most of the anaylsis (grid cells, place cells, etc) in the paper "Large-scale two-photon calcium imaging in freely moving mice (2021)" are also provided.
 
-## able of Contents: 
+## Contents: 
 1) Hardware: 3D models (and 2D drawings for custom components) of all componets for bulding a complete MINI2P system.
 
 2) Software: include a list of requiered software to run complete freely-moving MINI2P recordings, an example suite2P setting option, three DLC models (model 1 was trained by vidoes recorded from bottom of transparent floors with 'nose', 'mouse', 'lefthand', 'righthand', 'leftleg', 'rightleg', 'tailbase', and 'bodycenter' extracted; model 2 was trained by vidoes recorded from top of boxes with 'miniscope', 'leftear', 'rightear', 'bodycenter', and 'tailbase' extracted; model 3 was trained by vidoes recorded from top of boxes with 'nose', 'leftear', 'rightear', 'bodycenter', and 'tailbase' extracted), and a Labview-based traking vedio recording software.
