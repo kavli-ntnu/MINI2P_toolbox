@@ -9,21 +9,24 @@
 ## Contents: 
 1) Hardware
 
-      a) 3D models (and 2D drawings for custom components) of all componets for bulding a complete MINI2P system.
+      a) 3D models (and 2D drawings for custom components) of all componets for bulding a complete MINI2P system. https://github.com/WeijianZong/MINI2P_toolbox/tree/main/Hardware/MINI2P%20system%20Version%2020210712
 ![image](https://user-images.githubusercontent.com/43905023/127703645-a6ea03ea-c1aa-4eaa-a9fd-1e6e75a082ed.png)
       
       b)  A list of requiered hardware to run complete freely-moving MINI2P recordings.
+      https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Hardware/Minimum%20hardware%20requirement.docx
 
 
 2) Software 
 
-      a) A list of requiered software to run complete freely-moving MINI2P recordings and analysis.
+      a) A list of requiered software to run complete freely-moving MINI2P recordings and analysis. https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Software/Minimum%20software%20requirement.docx
       
-      b) An example suite2P setting option.
+      b) Two scanimage Machine Data Files (MDF). One is for 2000Hz MEMS-L scanner (https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Software/SI%20settings/Machine_Data_File_2000Hz.m) and the other is for 5600Hz MEMS-F scanner ();
       
-      c) Three DLC model configuration files (model 1 was trained by vidoes recorded from bottom of transparent floors with 'nose', 'mouse', 'lefthand', 'righthand', 'leftleg', 'rightleg', 'tailbase', and 'bodycenter' extracted; model 2 was trained by vidoes recorded from top of boxes with 'miniscope', 'leftear', 'rightear', 'bodycenter', and 'tailbase' extracted; model 3 was trained by vidoes recorded from top of boxes with 'nose', 'leftear', 'rightear', 'bodycenter', and 'tailbase' extracted).
+      c) An example suite2P setting option.
       
-      d) AnimalTracker.vi: a Labview pragram for recording animal behaviors and synchronizing with MINI2P imaging. More details in https://github.com/WeijianZong/MINI2P_toolbox/wiki/AnimalTracker.vi
+      d) Three DLC model configuration files: DLC1, DLC2, and DLC3. DLC1 was trained by vidoes recorded from bottom of transparent floors with 'nose', 'mouse', 'lefthand', 'righthand', 'leftleg', 'rightleg', 'tailbase', and 'bodycenter' extracted (https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Software/DLC%20model%20options/DLC1.yaml); DLC2 was trained by vidoes recorded from top of boxes with 'miniscope', 'leftear', 'rightear', 'bodycenter', and 'tailbase' extracted (https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Software/DLC%20model%20options/DLC2.yaml); DLC3 was trained by vidoes recorded from top of boxes with 'nose', 'leftear', 'rightear', 'bodycenter', and 'tailbase' extracted ().
+      
+      e) AnimalTracker.vi: a Labview pragram for recording animal behaviors and synchronizing with MINI2P imaging. More details in https://github.com/WeijianZong/MINI2P_toolbox/wiki/AnimalTracker.vi
 
 3) Analysis
 
