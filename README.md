@@ -1,12 +1,12 @@
 # MINI2P_toolbox
  
-Project:
+## Project:
   MINI2P_toolbox
 
-Description: 
+## Description: 
   MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for buidling and using MINI2P to do freely-moving recording. MINI2P is an open-source miniature 2-photon microsocpe for fast high-resolution calcium imaging in freely-moving mice, published in Zong, et al.,"Large-scale two-photon calcium imaging in freely moving mice (2021)". With the materials provided in this toolbox, people can assemble, test the MINI2P system, set up the animal tracking system, process the MINI2P imaging data, extract neuronal activity from single cells, and combine the neuronal activity data and the tracking data together for user-depedent downsteam analysis. The multi-FOV stitching software is also included. The codes for most of the anaylsis (grid cells, place cells, etc) in the paper "Large-scale two-photon calcium imaging in freely moving mice (2021)" are also provided.
 
-Table of Contents: 
+## Table of Contents: 
 1) Hardware: 3D models (and 2D drawings for custom components) of all componets for bulding a complete MINI2P system.
 
 2) Software: include a list of requiered software to run complete freely-moving MINI2P recordings, an example suite2P setting option, three DLC models (model 1 was trained by vidoes recorded from bottom of transparent floors with 'nose', 'mouse', 'lefthand', 'righthand', 'leftleg', 'rightleg', 'tailbase', and 'bodycenter' extracted; model 2 was trained by vidoes recorded from top of boxes with 'miniscope', 'leftear', 'rightear', 'bodycenter', and 'tailbase' extracted; model 3 was trained by vidoes recorded from top of boxes with 'nose', 'leftear', 'rightear', 'bodycenter', and 'tailbase' extracted), and a Labview-based traking vedio recording software.
@@ -24,12 +24,12 @@ Table of Contents:
 
 
 
-Installation: 
+## Installation: 
   Most of the codes in this toolbox were written in Matlab (the python version will be published in the future). Please make sure the Matlab (recommend version 2020b) was installed in your computer. Firstly, download or clone the whole repository in a local foler. Then, include folder and subfolders \MINI2P_toolbox\MINI2P_toolbox\codes in Matlab search path by pressing "set path” in the home toolstrip of Matlab, then “add with subfolders...". 
 
-Usage:
+## Usage:
   Applications NATEX, StitchingChecker and DistortionCleaner were written with Matlab app designer. In order to use these softwares, please press "open” in the home toolstrip of Matlab, select the software, wait until the app designer interface pops out, and then press "run". The details about how to use these codes and softwares are in wiki pages of this repository.
 
 
-Credits: the codes were mainly written by Weijian Zong (weijian.zong@ntnu.no) at Kavli Institute for Systems Neuroscience, but got inputs and test from all authors in the paper Zong, et al.,"Large-scale two-photon calcium imaging in freely moving mice (2021)". Since MINI2P is a complete open-source project, we encourage people use, test, modify and further develop this toolbox. If you have any question or suggestion, or find any bugs in the codes, please contact us! If the codes and software in this toolbox help your project, please cite our paper Zong, et al.,"Large-scale two-photon calcium imaging in freely moving mice (2021)" in your publications! Enjoy it!
+## Credits: the codes were mainly written by Weijian Zong (weijian.zong@ntnu.no) at Kavli Institute for Systems Neuroscience, but got inputs and test from all authors in the paper Zong, et al.,"Large-scale two-photon calcium imaging in freely moving mice (2021)". Since MINI2P is a complete open-source project, we encourage people use, test, modify and further develop this toolbox. If you have any question or suggestion, or find any bugs in the codes, please contact us! If the codes and software in this toolbox help your project, please cite our paper Zong, et al.,"Large-scale two-photon calcium imaging in freely moving mice (2021)" in your publications! Enjoy it!
 
