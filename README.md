@@ -12,9 +12,13 @@
 
 
 2) Software: include 
+
       a) A list of requiered software to run complete freely-moving MINI2P recordings, 
+      
       b) An example suite2P setting option, 
+      
       c) Three DLC model configuration files (model 1 was trained by vidoes recorded from bottom of transparent floors with 'nose', 'mouse', 'lefthand', 'righthand', 'leftleg', 'rightleg', 'tailbase', and 'bodycenter' extracted; model 2 was trained by vidoes recorded from top of boxes with 'miniscope', 'leftear', 'rightear', 'bodycenter', and 'tailbase' extracted; model 3 was trained by vidoes recorded from top of boxes with 'nose', 'leftear', 'rightear', 'bodycenter', and 'tailbase' extracted),
+      
       d) AnimalTracker: a Labview pragram for recording animal behaviors and synchronizing with MINI2P imaging.
 
 3) Analysis: include pipelines for spatial tuning analysis included in the paper (grid cells, place cells,etc), and three Matlab-based applications: NATEX, StitchingChecker and DistortionCleaner.
