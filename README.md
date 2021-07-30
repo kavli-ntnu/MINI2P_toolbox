@@ -20,7 +20,7 @@
 
       a) A list of requiered software to run complete freely-moving MINI2P recordings and analysis. https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Software/Minimum%20software%20requirement.docx
       
-      b) Two scanimage Machine Data Files (MDF). One is for 2000Hz MEMS-L scanner () and the other is for 5600Hz MEMS-F scanner ();
+      b) Two scanimage Machine Data Files (MDF). One is for 2000Hz MEMS-L scanner (https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Software/SI%20settings/Machine_Data_File_2000Hz.m) and the other is for 5600Hz MEMS-F scanner ();
       
       c) An example suite2P setting option.
       
