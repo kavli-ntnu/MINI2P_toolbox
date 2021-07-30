@@ -8,7 +8,7 @@
 
 ## Contents: 
 1) Hardware: 3D models (and 2D drawings for custom components) of all componets for bulding a complete MINI2P system.
-![image](https://user-images.githubusercontent.com/43905023/127702671-fe4242aa-bb04-43c9-81da-52db0b79fd60.png)
+![image](https://user-images.githubusercontent.com/43905023/127703645-a6ea03ea-c1aa-4eaa-a9fd-1e6e75a082ed.png)
 
 
 2) Software: include 
