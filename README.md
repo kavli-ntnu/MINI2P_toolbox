@@ -7,7 +7,7 @@
   MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for buidling and using MINI2P to do freely-moving recording. MINI2P is an open-source miniature 2-photon microsocpe for fast high-resolution calcium imaging in freely-moving mice, published in Zong, et al.,"Large-scale two-photon calcium imaging in freely moving mice (2021)". With the materials provided in this toolbox, people can assemble, test the MINI2P system, set up the animal tracking system, process the MINI2P imaging data, extract neuronal activity from single cells, and combine the neuronal activity data and the tracking data together for user-depedent downsteam analysis. The multi-FOV stitching software is also included. The codes for most of the anaylsis (grid cells, place cells, etc) in the paper "Large-scale two-photon calcium imaging in freely moving mice (2021)" are also provided.
 
 ## Contents: 
-1) Hardware folder
+1) Hardware
 
       a) 3D models (and 2D drawings for custom components) of all componets for bulding a complete MINI2P system.
 ![image](https://user-images.githubusercontent.com/43905023/127703645-a6ea03ea-c1aa-4eaa-a9fd-1e6e75a082ed.png)
@@ -15,7 +15,7 @@
       b)  A list of requiered hardware to run complete freely-moving MINI2P recordings.
 
 
-2) Software folder 
+2) Software 
 
       a) A list of requiered software to run complete freely-moving MINI2P recordings and analysis.
       
@@ -25,7 +25,8 @@
       
       d) AnimalTracker.vi: a Labview pragram for recording animal behaviors and synchronizing with MINI2P imaging. More details in https://github.com/WeijianZong/MINI2P_toolbox/wiki/AnimalTracker.vi
 
-3) Analysis folder
+3) Analysis
+
       a) Pipelines for spatial tuning analysis included in the paper (grid cells, place cells,etc).
 
       b) NATEX.mlapp: Nat Explorer, an application to load, process and preview the neuronal activity data (from the Suite2P output) and the tracking data (from the DLC output). It                 also combines the neuronal activity data and tracking data into the NAT.mat (Neuron Activity aligned with Tracking Matrix) and put all necessasy information                     into ExperimentInformation.mat for the user-specific downsteam analysis. More details in https://github.com/WeijianZong/MINI2P_toolbox/wiki/NATEX.mlapp
