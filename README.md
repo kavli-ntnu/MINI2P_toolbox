@@ -8,6 +8,8 @@
 
 ## Contents: 
 1) Hardware: 3D models (and 2D drawings for custom components) of all componets for bulding a complete MINI2P system.
+![image](https://user-images.githubusercontent.com/43905023/127702671-fe4242aa-bb04-43c9-81da-52db0b79fd60.png)
+
 
 2) Software: include a list of requiered software to run complete freely-moving MINI2P recordings, an example suite2P setting option, three DLC models (model 1 was trained by vidoes recorded from bottom of transparent floors with 'nose', 'mouse', 'lefthand', 'righthand', 'leftleg', 'rightleg', 'tailbase', and 'bodycenter' extracted; model 2 was trained by vidoes recorded from top of boxes with 'miniscope', 'leftear', 'rightear', 'bodycenter', and 'tailbase' extracted; model 3 was trained by vidoes recorded from top of boxes with 'nose', 'leftear', 'rightear', 'bodycenter', and 'tailbase' extracted), and a Labview-based traking vedio recording software.
 
