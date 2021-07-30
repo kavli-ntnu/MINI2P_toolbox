@@ -11,7 +11,11 @@
 ![image](https://user-images.githubusercontent.com/43905023/127702671-fe4242aa-bb04-43c9-81da-52db0b79fd60.png)
 
 
-2) Software: include a list of requiered software to run complete freely-moving MINI2P recordings, an example suite2P setting option, three DLC models (model 1 was trained by vidoes recorded from bottom of transparent floors with 'nose', 'mouse', 'lefthand', 'righthand', 'leftleg', 'rightleg', 'tailbase', and 'bodycenter' extracted; model 2 was trained by vidoes recorded from top of boxes with 'miniscope', 'leftear', 'rightear', 'bodycenter', and 'tailbase' extracted; model 3 was trained by vidoes recorded from top of boxes with 'nose', 'leftear', 'rightear', 'bodycenter', and 'tailbase' extracted), and a Labview-based traking vedio recording software.
+2) Software: include 
+      a) A list of requiered software to run complete freely-moving MINI2P recordings, 
+      b) An example suite2P setting option, 
+      c) Three DLC model configuration files (model 1 was trained by vidoes recorded from bottom of transparent floors with 'nose', 'mouse', 'lefthand', 'righthand', 'leftleg', 'rightleg', 'tailbase', and 'bodycenter' extracted; model 2 was trained by vidoes recorded from top of boxes with 'miniscope', 'leftear', 'rightear', 'bodycenter', and 'tailbase' extracted; model 3 was trained by vidoes recorded from top of boxes with 'nose', 'leftear', 'rightear', 'bodycenter', and 'tailbase' extracted),
+      d) AnimalTracker: a Labview pragram for recording animal behaviors and synchronizing with MINI2P imaging.
 
 3) Analysis: include pipelines for spatial tuning analysis included in the paper (grid cells, place cells,etc), and three Matlab-based applications: NATEX, StitchingChecker and DistortionCleaner.
 
