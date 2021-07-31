@@ -25,7 +25,7 @@
       
       d) Three DLC model configuration files: [DLC1], [DLC2], and [DLC3]. More details in [Wiki page](https://github.com/WeijianZong/MINI2P_toolbox/wiki/DeepLabCut-trained-Models).
       
-      e) [AnimalTracker.vi](https://github.com/WeijianZong/MINI2P_toolbox/tree/main/Software/AnimalTracker): a Labview pragram for recording animal behaviors and synchronizing with MINI2P imaging. More details in More details in [Wiki page](https://github.com/WeijianZong/MINI2P_toolbox/wiki/AnimalTracker.vi)
+      e) [AnimalTracker.vi](https://github.com/WeijianZong/MINI2P_toolbox/tree/main/Software/AnimalTracker): a Labview pragram for recording animal behaviors and synchronizing the tracking camera recording with the MINI2P imaging. More details in More details in [Wiki page](https://github.com/WeijianZong/MINI2P_toolbox/wiki/AnimalTracker.vi)
 
 3) Analysis
 
