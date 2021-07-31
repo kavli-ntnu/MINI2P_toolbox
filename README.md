@@ -51,5 +51,5 @@
 
 
 ## Credits: 
-  The codes were mainly written by Weijian Zong (weijian.zong@ntnu.no) in [Moser lab](https://www.ntnu.edu/kavli/moser-group#/view/about) at Kavli Institute for Systems Neuroscience, but got inputs and test from all authors in the paper Zong, et al.,"Large-scale two-photon calcium imaging in freely moving mice (2021)". Since MINI2P is a complete open-source project, we encourage people use, test, modify and further develop this toolbox. If you have any question or suggestion, or find any bugs in the codes, please contact us! If the codes and software in this toolbox help your project, please cite our paper Zong, et al.,"Large-scale two-photon calcium imaging in freely moving mice (2021)" in your publications! Enjoy it!
+  The codes were mainly written by Weijian Zong (weijian.zong@ntnu.no) in [Moser lab](https://www.ntnu.edu/kavli/moser-group#/view/about) at Kavli Institute for Systems Neuroscience, but got inputs and test from all authors in the paper Zong, et al.,"Large-scale two-photon calcium imaging in freely moving mice (2021)". Since MINI2P is a complete open-source project, we encourage people use, test, modify and further develop this toolbox. If you have any question or suggestion, or find any bugs in the codes, please contact us! If tIf you use the code or data, please cite us!
 
