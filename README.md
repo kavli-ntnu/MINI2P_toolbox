@@ -23,9 +23,9 @@
       
       c) An example [suite2P settings](https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Software/Suite2P%20options/GCaMP6S_P2_C1_7.25Hz_MEC.npy).
       
-      d) Three DLC model configuration files: DLC1, DLC2, and DLC3. More details in [Wiki page](https://github.com/WeijianZong/MINI2P_toolbox/wiki/DeepLabCut-trained-Models).
+      d) Three DLC model configuration files: [DLC1], [DLC2], and [DLC3]. More details in [Wiki page](https://github.com/WeijianZong/MINI2P_toolbox/wiki/DeepLabCut-trained-Models).
       
-      e) [AnimalTracker.vi](): a Labview pragram for recording animal behaviors and synchronizing with MINI2P imaging. More details in https://github.com/WeijianZong/MINI2P_toolbox/wiki/AnimalTracker.vi
+      e) [AnimalTracker.vi](https://github.com/WeijianZong/MINI2P_toolbox/tree/main/Software/AnimalTracker): a Labview pragram for recording animal behaviors and synchronizing with MINI2P imaging. More details in https://github.com/WeijianZong/MINI2P_toolbox/wiki/AnimalTracker.vi
 
 3) Analysis
 
