@@ -7,7 +7,7 @@
   MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for buidling and using MINI2P to do freely-moving recording. MINI2P is an open-source miniature 2-photon microsocpe for fast high-resolution calcium imaging in freely-moving mice, published in Zong, et al.,"Large-scale two-photon calcium imaging in freely moving mice (2021)". With the materials provided in this toolbox, people can assemble, test the MINI2P system, set up the animal tracking system, process the MINI2P imaging data, extract neuronal activity from single cells, and combine the neuronal activity data and the tracking data together for user-depedent downsteam analysis. The multi-FOV stitching software is also included. The codes for most of the anaylsis (grid cells, place cells, etc) in the paper "Large-scale two-photon calcium imaging in freely moving mice (2021)" are also provided.
 
 ## Contents: 
-1) Hardware
+1) [Hardware](https://github.com/WeijianZong/MINI2P_toolbox/tree/main/Hardware)
 
       a) [3D models (and 2D drawings for custom components) of all componets for bulding a complete MINI2P system.](https://github.com/WeijianZong/MINI2P_toolbox/tree/main/Hardware/MINI2P%20system%20Version%2020210712)
 ![image](https://user-images.githubusercontent.com/43905023/127703645-a6ea03ea-c1aa-4eaa-a9fd-1e6e75a082ed.png)
@@ -15,7 +15,7 @@
       b)  A list of [requiered hardware](https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Hardware/Minimum%20hardware%20requirement.docx) to run complete freely-moving MINI2P recordings.
 
 
-2) Software 
+2) [Software](https://github.com/WeijianZong/MINI2P_toolbox/tree/main/Software) 
 
       a) A list of [requiered software](https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Software/Minimum%20software%20requirement.docx) to run complete freely-moving MINI2P recordings and analysis.
       
@@ -27,7 +27,7 @@
       
       e) [AnimalTracker.vi](https://github.com/WeijianZong/MINI2P_toolbox/tree/main/Software/AnimalTracker): a Labview pragram for recording animal behaviors and synchronizing the tracking camera recording with the MINI2P imaging. More details in More details in [Wiki page](https://github.com/WeijianZong/MINI2P_toolbox/wiki/AnimalTracker.vi)
 
-3) Analysis
+3) [Analysis](https://github.com/WeijianZong/MINI2P_toolbox/tree/main/Analysis)
 
       a) Pipelines for spatial tuning analysis included in the paper (grid cells, place cells,etc).
 
@@ -40,6 +40,7 @@
      d) [DistortionCleaner.mlapp](https://github.com/WeijianZong/MINI2P_toolbox/tree/main/Analysis/Applications/DistortionCleaner)：an application to elimiate the scanning distortion of MINI2P imaging, callibrate FOV and pixel size, and generate transform matrix. More details in [Wiki page](https://github.com/WeijianZong/MINI2P_toolbox/wiki/DistortionCleaner.mlapp)
      ![image](https://user-images.githubusercontent.com/43905023/127650948-b8ef7cc8-8c40-49b2-b374-dba90cc2844a.png)
 
+4) [Documents](https://github.com/WeijianZong/MINI2P_toolbox/tree/main/Documents)
 
 
 ## Installation: 
