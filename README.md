@@ -17,11 +17,11 @@
 
 2) Software 
 
-      a) [A list of requiered software to run complete freely-moving MINI2P recordings and analysis.](https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Software/Minimum%20software%20requirement.docx)
+      a) A list of [requiered software](https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Software/Minimum%20software%20requirement.docx) to run complete freely-moving MINI2P recordings and analysis.
       
       b) Two scanimage Machine Data Files (MDF). One is for [2000Hz MEMS-L scanner](https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Software/SI%20settings/Machine_Data_File_2000Hz.m) and the other is for [5600Hz MEMS-F scanner]();
       
-      c) An example [suite2P settings](https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Software/Suite2P%20options/GCaMP6S_P2_C1_7.25Hz_MEC.npy).
+      c) An example [Suite2P settings](https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Software/Suite2P%20options/GCaMP6S_P2_C1_7.25Hz_MEC.npy).
       
       d) Three DLC model configuration files: [DLC1], [DLC2], and [DLC3]. More details in [Wiki page](https://github.com/WeijianZong/MINI2P_toolbox/wiki/DeepLabCut-trained-Models).
       
@@ -31,13 +31,13 @@
 
       a) Pipelines for spatial tuning analysis included in the paper (grid cells, place cells,etc).
 
-      b) NATEX.mlapp: Nat Explorer, an application to load, process and preview the neuronal activity data (from the Suite2P output) and the tracking data (from the DLC output). It                 also combines the neuronal activity data and tracking data into the NAT.mat (Neuron Activity aligned with Tracking Matrix) and put all necessasy information                     into ExperimentInformation.mat for the user-specific downsteam analysis. More details in https://github.com/WeijianZong/MINI2P_toolbox/wiki/NATEX.mlapp
+      b) [NATEX.mlapp](): Nat Explorer, an application to load, process and preview the neuronal activity data (from the Suite2P output) and the tracking data (from the DLC output). It                 also combines the neuronal activity data and tracking data into the NAT.mat (Neuron Activity aligned with Tracking Matrix) and put all necessasy information                     into ExperimentInformation.mat for the user-specific downsteam analysis. More details in [Wiki page](https://github.com/WeijianZong/MINI2P_toolbox/wiki/NATEX.mlapp) 
       ![image](https://user-images.githubusercontent.com/43905023/127646675-27e2dd97-a133-4289-85f3-d8024797a86c.png)
 
-      c) StitchingChecker.mlapp: an application to stitch multiple FOV recorded from different positions of the cortext. It can load in wide-field image as a reference for FOV                                  alignment and can also take the retinotopic mapping result in for identifying different visual cortices. The precise alginment of FOVs is confirmed                              by  i) overlapping of the landmarks between FOVs and the wide-field image, or between neighbouring FOVS; ii) peak cross-correlation between FOVs and                            the wide-field image, or between neighbouring FOVs; and iii) overlapping of the repeated cells in neighbouring FOVS. We also found this application is                            can be used to register imagings recorded in multiple days. More details in https://github.com/WeijianZong/MINI2P_toolbox/wiki/StitchingChecker.mlapp
+      c) [StitchingChecker.mlapp](): an application to stitch multiple FOV recorded from different positions of the cortext. It can load in wide-field image as a reference for FOV                                  alignment and can also take the retinotopic mapping result in for identifying different visual cortices. The precise alginment of FOVs is confirmed                              by  i) overlapping of the landmarks between FOVs and the wide-field image, or between neighbouring FOVS; ii) peak cross-correlation between FOVs and                            the wide-field image, or between neighbouring FOVs; and iii) overlapping of the repeated cells in neighbouring FOVS. We also found this application is                            can be used to register imagings recorded in multiple days. More details in [Wiki page](https://github.com/WeijianZong/MINI2P_toolbox/wiki/StitchingChecker.mlapp)
      ![image](https://user-images.githubusercontent.com/43905023/127649125-7b5b9de3-53f1-4d65-8fc2-63f9bdea75a4.png)
 
-     d) DistortionCleaner.mlapp：an application to elimiate the scanning distortion of MINI2P imaging, callibrate FOV and pixel size, and generate transform matrix. More details in https://github.com/WeijianZong/MINI2P_toolbox/wiki/DistortionCleaner.mlapp
+     d) [DistortionCleaner.mlapp]：an application to elimiate the scanning distortion of MINI2P imaging, callibrate FOV and pixel size, and generate transform matrix. More details in [Wiki page](https://github.com/WeijianZong/MINI2P_toolbox/wiki/DistortionCleaner.mlapp)
      ![image](https://user-images.githubusercontent.com/43905023/127650948-b8ef7cc8-8c40-49b2-b374-dba90cc2844a.png)
 
 
