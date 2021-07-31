@@ -12,7 +12,7 @@
       a) [3D models (and 2D drawings for custom components) of all componets for bulding a complete MINI2P system.](https://github.com/WeijianZong/MINI2P_toolbox/tree/main/Hardware/MINI2P%20system%20Version%2020210712)
 ![image](https://user-images.githubusercontent.com/43905023/127703645-a6ea03ea-c1aa-4eaa-a9fd-1e6e75a082ed.png)
       
-      b)  [A list of requiered hardware to run complete freely-moving MINI2P recordings.](https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Hardware/Minimum%20hardware%20requirement.docx)
+      b)  A list of [requiered hardware](https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Hardware/Minimum%20hardware%20requirement.docx) to run complete freely-moving MINI2P recordings.
 
 
 2) Software 
