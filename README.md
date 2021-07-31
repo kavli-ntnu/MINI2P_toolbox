@@ -12,15 +12,14 @@
       a) [3D models (and 2D drawings for custom components) of all componets for bulding a complete MINI2P system.](https://github.com/WeijianZong/MINI2P_toolbox/tree/main/Hardware/MINI2P%20system%20Version%2020210712)
 ![image](https://user-images.githubusercontent.com/43905023/127703645-a6ea03ea-c1aa-4eaa-a9fd-1e6e75a082ed.png)
       
-      b)  A list of requiered hardware to run complete freely-moving MINI2P recordings.
-      https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Hardware/Minimum%20hardware%20requirement.docx
+      b)  [A list of requiered hardware to run complete freely-moving MINI2P recordings.](https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Hardware/Minimum%20hardware%20requirement.docx)
 
 
 2) Software 
 
-      a) A list of requiered software to run complete freely-moving MINI2P recordings and analysis. https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Software/Minimum%20software%20requirement.docx
+      a) [A list of requiered software to run complete freely-moving MINI2P recordings and analysis.](https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Software/Minimum%20software%20requirement.docx)
       
-      b) Two scanimage Machine Data Files (MDF). One is for 2000Hz MEMS-L scanner (https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Software/SI%20settings/Machine_Data_File_2000Hz.m) and the other is for 5600Hz MEMS-F scanner ();
+      b) Two scanimage Machine Data Files (MDF). One is for [2000Hz MEMS-L scanner] (https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Software/SI%20settings/Machine_Data_File_2000Hz.m) and the other is for [5600Hz MEMS-F scanner]();
       
       c) An example suite2P setting option. https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Software/Suite2P%20options/GCaMP6S_P2_C1_7.25Hz_MEC.npy.
       
