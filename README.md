@@ -29,7 +29,7 @@
 
 3) [Analysis](https://github.com/WeijianZong/MINI2P_toolbox/tree/main/Analysis)
 
-      a) Pipelines for spatial tuning analysis included in the paper (grid cells, place cells,etc).
+      a) [Pipelines](https://github.com/WeijianZong/MINI2P_toolbox/tree/main/Analysis/Pipeline) for spatial tuning analysis included in the paper (grid cells, place cells,etc).
 
       b) [NATEX.mlapp](https://github.com/WeijianZong/MINI2P_toolbox/tree/main/Analysis/Applications/NATEX): Nat Explorer, an application to load, process and preview the neuronal activity data (from the Suite2P output) and the tracking data (from the DLC output). It                 also combines the neuronal activity data and tracking data into the NAT.mat (Neuron Activity aligned with Tracking Matrix) and put all necessasy information                     into ExperimentInformation.mat for the user-specific downsteam analysis. More details in [Wiki page](https://github.com/WeijianZong/MINI2P_toolbox/wiki/NATEX.mlapp) 
       ![image](https://user-images.githubusercontent.com/43905023/127646675-27e2dd97-a133-4289-85f3-d8024797a86c.png)
