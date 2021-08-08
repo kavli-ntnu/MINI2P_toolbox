@@ -1,5 +1,5 @@
 close all;
-%% paremater settings
+% paremater settings
 MapSmooth=2.5;
 MapBinsize=3; % cm
 SpeedThreadhold=2.5; %cm/mm
@@ -23,22 +23,23 @@ GridScore_shuffled=zeros(ExperimentInformation.TotalCell,Shuffling+3,ExperimentI
 for j=1:1:ExperimentInformation.Session
     k=1;
     for i=1:1:ExperimentInformation.TotalCell
+        % for i=1;
         SelectedFrame_raw=find(~isnan(NAT{1,j}(:,4*i+10)));
         SelectedFrame_filtered=intersect(find(~isnan(NAT{1,j}(:,4*i+10))),find(NAT{1,j}(:,6)==1));% filter out the frames with speed valid
         SelectedFrame_filtered=intersect(SelectedFrame_filtered,find(NAT{1,j}(:,5)>SpeedThreadhold));% filter out the frames with speed threadhold
         Event_filtered=intersect(find(NAT{1,j}(:,4*i+12)>0),find(NAT{1,j}(:,6)==1));% filter out the frames with speed valid
-        Event_filtered=intersect(Event_filtered,find(NAT{1,j}(:,5)>SpeedThreadhold));% filter out the frames with speed threadholds
+        Event_filtered=intersect(Event_filtered,find(NAT{1,j}(:,5)>SpeedThreadhold));% filter out the frames with speed threadholds       
         if length(Event_filtered)>MinEventCount && ExperimentInformation.CellSNR(i)>3 && ~ismember(i,ExperimentInformation.RepeatCell)
             EventTrain=NAT{1,j}(SelectedFrame_filtered,[1 4*i+12]);
             CellForAnalysis{j,1}(k)=i;
             SpatialInformation=zeros(length(CorrectionScan),1);
-            %             GridsStat_try=cell(length(CorrectionScan),1);
-            %             GridCenter_try=zeros(length(CorrectionScan),1);
-            %             GridsScoreRadius_try=cell(length(CorrectionScan),1);
+%             GridsStat_try=cell(length(CorrectionScan),1);
+%             GridCenter_try=zeros(length(CorrectionScan),1);
+%             GridsScoreRadius_try=cell(length(CorrectionScan),1);
             for p=1:1:length(CorrectionScan)
-                PositionTrain_raw=NAT{1,j}(:,1:3);
+                PositionTrain_raw=NAT{1,j}(:,1:3);                
                 PositionTrain_raw(:,2)= PositionTrain_raw(:,2)+ (CorrectionScan(p)* cos(NAT{1,j}(:,4) * pi/180));
-                PositionTrain_raw(:,3)= PositionTrain_raw(:,3)+ (CorrectionScan(p)* sin(NAT{1,j}(:,4) * pi/180));
+                PositionTrain_raw(:,3)= PositionTrain_raw(:,3)+ (CorrectionScan(p)* sin(NAT{1,j}(:,4) * pi/180));               
                 PositionTrain_try=PositionTrain_raw(SelectedFrame_filtered,:)       ;
                 ActivityMap_try=analyses.map(PositionTrain_try,EventTrain,'smooth',MapSmooth,'binWidth',MapBinsize,'minTime',MinTime,'limits',Limit);
                 [SpatialInformation_tem,~,~]=analyses.mapStatsPDF(ActivityMap_try);
@@ -46,17 +47,24 @@ for j=1:1:ExperimentInformation.Session
             end
             if ~isempty(SpatialInformation)
                 [Gridscore_best,BestShift]=max(SpatialInformation(:));
+                
+                
+                
+                %                 GridScore_shuffled(i,Shuffling+3,j)=Gridscore_best;
+                GridsStat{j,i}=GridsStat_try{BestShift,1};
+
             end
             GridBestShift(j,i)=CorrectionScan(BestShift);
             PositionTrain_raw=NAT{1,j}(:,1:3);
-            
-            PositionTrain_raw(:,2)=PositionTrain_raw(:,2)+ (CorrectionScan(BestShift)* cos(NAT{1,j}(:,4) * pi/180));
-            PositionTrain_raw(:,3)=PositionTrain_raw(:,3)+ (CorrectionScan(BestShift)* sin(NAT{1,j}(:,4) * pi/180));
-            
+            PositionTrain_raw(:,2)=circshift(PositionTrain_raw(:,2),CorrectionScan(BestShift));
+            PositionTrain_raw(:,3)=circshift(PositionTrain_raw(:,3),CorrectionScan(BestShift));
             PositionTrain=PositionTrain_raw(SelectedFrame_filtered,:);
             ActivityMap{j,i}=analyses.map(PositionTrain,EventTrain,'smooth',MapSmooth,'binWidth',MapBinsize,'minTime',MinTime,'limits',Limit);
             AutocorrelationMap{j,i}=analyses.autocorrelation(ActivityMap{j,i}.z);
-            [ GridScore_shuffled(i,Shuffling+3,j),GridsStat{j,i},Centerfield,~,ScoreRadius]=analyses.gridnessScore(AutocorrelationMap{j,i});
+            [ Gridscore_try(p,1),GridsStat_try{p,1},Centerfield,~,GridsScoreRadius_try{p,1}]=analyses.gridnessScore(AutocorrelationMap_try); 
+            
+            Centerfield=GridCenter_try(BestShift,1);
+            ScoreRadius=GridsScoreRadius_try{BestShift,1};
             
             if ~isnan(Gridscore_best) &&  ~isempty(GridsStat{j,i}.spacing)
                 Orientationcheck=GridsStat{j,i}.orientation;
@@ -65,7 +73,7 @@ for j=1:1:ExperimentInformation.Session
                     if max(Distancecheck)<2*min(Distancecheck)
                         GridScore_shuffled(i,Shuffling+3,j)=Gridscore_best;
                         for n=1:1:Shuffling
-                            xmin=Shuffling_mininterval*ExperimentInformation.Trackingframerate;
+                            xmin=Shuffling_mininterval*ExperimentInformation.FrameRate;
                             xmax=size(length(SelectedFrame_filtered),1)-xmin;
                             ShiftFrame=round(xmin+rand(1,1)*(xmax-xmin));
                             EventTrain_shuffled=circshift(EventTrain,ShiftFrame);
@@ -128,16 +136,16 @@ height=1400;
 set(gcf,'position',[x0,y0,width,height])
 j=1;
 for i=1:1:size(GridCellAnalysis.IsGridCell{j,1},2)
-    subplot(12,18,i,'align')
+    subplot(10,14,i,'align')
     MAP=GridCellAnalysis.ActivityMap{session,GridCellAnalysis.IsGridCell{j,1}(i)}.z;
     MAX=prctile(MAP(:),99);
     %             imagesc(flipud((MAP-min(min(MAP)))./(max(max(MAP))-min(min(MAP)))),'AlphaData',MAP>0);
-    imagesc(flipud(MAP./MAX),'AlphaData',flipud(MAP./MAX)>0);
+    imagesc(flipud(MAP./MAX),'AlphaData',flipud(MAP./MAX));
     
     CMP=WJplots.CMP.inferno(256);
-%                 colormap(CMP)
-%     colormap(parula)
-                colormap(jet)
+    %             colormap(CMP)
+    colormap(parula)
+    %             colormap(jet)
     caxis([0 1] );
     ylim([0 size(MAP,1)])
     xlim([0 size(MAP,2)])
@@ -163,7 +171,7 @@ height=1400;
 set(gcf,'position',[x0,y0,width,height])
 j=1;
 for i=1:1:size(GridCellAnalysis.IsGridCell{j,1},2)
-    subplot(12,18,i,'align')
+    subplot(10,14,i,'align')
     MAP=GridCellAnalysis.AutocorrelationMap{session,GridCellAnalysis.IsGridCell{j,1}(i)};
     imagesc(flipud((MAP+1)./2));
     CMP=WJplots.CMP.inferno(256);
@@ -218,7 +226,7 @@ set(gca,'color',[1 1 1]);
 set(gcf,'color',[1 1 1]);
 
 %%
-Gridcell_overlapped=[];
+Gridcell_overlapped=[159 217 280 301 317];
 GridCellAnalysis.Gridcell_overlapped=Gridcell_overlapped;
 %%
 save ([ExperimentInformation.RawDataAddress,'\GridCellAnalysis.mat'],'GridCellAnalysis','-v7.3');
