@@ -1,14 +1,14 @@
 close all;
 %% paremater settings
-MapSmooth=2.5;
-MapBinsize=3; % cm
+MapSmooth=3;
+MapBinsize=2.5; % cm
 SpeedThreadhold=2.5; %cm/mm
 MinEventCount=100;
 MinSNR=3;
 Shuffling=1000;
 Shuffling_mininterval=30; %second
 MinTime=0.1; %second
-CorrectionScan=[-4 -2 0 2 4];
+CorrectionScan=[-6 -4 -2 0 2 4 6];
 Limit=[-41 41 -41 41];
 Radii=[5 5];
 GridBestShift=zeros(ExperimentInformation.Session,ExperimentInformation.TotalCell);
@@ -63,7 +63,7 @@ for j=1:1:ExperimentInformation.Session
                 Distancecheck=GridsStat{j,i}.spacing;
                 if abs(Orientationcheck(2)-Orientationcheck(1))>30 && abs(Orientationcheck(2)-Orientationcheck(1))<90 && abs(Orientationcheck(3)-Orientationcheck(2))>30 && abs(Orientationcheck(3)-Orientationcheck(2))<90
                     if max(Distancecheck)<2*min(Distancecheck)
-                        GridScore_shuffled(i,Shuffling+3,j)=Gridscore_best;
+%                         GridScore_shuffled(i,Shuffling+3,j)=Gridscore_best;
                         for n=1:1:Shuffling
                             xmin=Shuffling_mininterval*ExperimentInformation.Trackingframerate;
                             xmax=size(length(SelectedFrame_filtered),1)-xmin;
@@ -136,8 +136,8 @@ for i=1:1:size(GridCellAnalysis.IsGridCell{j,1},2)
     
     CMP=WJplots.CMP.inferno(256);
 %                 colormap(CMP)
-%     colormap(parula)
-                colormap(jet)
+    colormap(parula)
+%                 colormap(jet)
     caxis([0 1] );
     ylim([0 size(MAP,1)])
     xlim([0 size(MAP,2)])
@@ -216,9 +216,56 @@ for i=1:1:size(GridCellAnalysis.IsGridCell{j,1},2)
 end
 set(gca,'color',[1 1 1]);
 set(gcf,'color',[1 1 1]);
-
 %%
-Gridcell_overlapped=[];
+%% show events plot for all grid cells
+close all
+Shuffling=1000;
+k=1;
+session=1;
+figure
+x0=-100;
+y0=-100;
+width=3440;
+height=1200;
+set(gcf,'position',[x0,y0,width,height])
+j=1;
+coluum=18;
+Shift=45;
+S=0;
+CMP=winter(50);
+for k=1:1:size(GridCellAnalysis.IsGridCell{j,1},2)
+    i=GridCellAnalysis.IsGridCell{j,1}(k);
+    P=mod(k,coluum);
+    if P==0
+        P=coluum;
+        
+    elseif P==1
+        S=S+1;
+    else
+    end
+    %         subplot(20,15,k,'align')
+    Bestshift=GridCellAnalysis.GridBestShift(i);
+    SelectedFrame_filtered=intersect(find(~isnan(NAT{1,j}(:,4*i+10))),find(NAT{1,j}(:,6)==1));% filter out the frames with speed valid
+    SelectedFrame_filtered=intersect(SelectedFrame_filtered,find(NAT{1,j}(:,5)>2.5));% filter out the frames with speed threadhold
+    Event_filtered=intersect(find(NAT{1,j}(:,4*i+12)>0),find(NAT{1,j}(:,6)==1));% filter out the frames with speed valid
+    Event_filtered=intersect(Event_filtered,find(NAT{1,j}(:,5)>2.5));% filter out the frames with speed threadhold
+    Position=NAT{1,j}(Event_filtered,2:3);    
+    Position(:,1)=Position(:,1)+ (Bestshift*cos(NAT{1,j}(Event_filtered,4) * pi/180));
+    Position(:,2)=Position(:,2)+ (Bestshift*sin(NAT{1,j}(Event_filtered,4) * pi/180));   
+    Event=NAT{1,j}(Event_filtered,4*i+12);
+    Max=max(Event(:));
+    scatter(Position(:,1)+100*(P-1),Position(:,2)-100*(S-1),15*(sqrt(Event./Max)),[1 0 0],'filled','MarkerFaceAlpha',0.8)
+    ylim([-100*(round(size(GridCellAnalysis.IsGridCell{j,1},2)/coluum)+0.5),50])
+    xlim([-50,100*coluum])    
+    daspect([1 1 1]);
+    hold on    
+    axis off
+end
+box off
+% set(gca,'color',[0 0 0]);
+% set(gcf,'color',[0 0 0]);
+%%
+Gridcell_overlapped=[39];
 GridCellAnalysis.Gridcell_overlapped=Gridcell_overlapped;
 %%
 save ([ExperimentInformation.RawDataAddress,'\GridCellAnalysis.mat'],'GridCellAnalysis','-v7.3');
