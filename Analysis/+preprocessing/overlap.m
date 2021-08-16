@@ -5,7 +5,7 @@ Image=zeros(ImageSize);
 Xpoint=mod(double(ROI1(1,:))',ImageSize(1));
 Ypoint=mod(double(ROI1(2,:))',ImageSize(2));
 Xpoint(Xpoint==0)=ImageSize(1);
-Ypoint(Xpoint==0)=ImageSize(2);
+Ypoint(Ypoint==0)=ImageSize(2);
 for m=1:1:length(Xpoint)
       Image(Ypoint(m),Xpoint(m))=1;
 end 
