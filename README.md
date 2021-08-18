@@ -35,16 +35,13 @@
       ![image](https://user-images.githubusercontent.com/43905023/127646675-27e2dd97-a133-4289-85f3-d8024797a86c.png)
 
       c) [StitchingChecker.mlapp](https://github.com/WeijianZong/MINI2P_toolbox/tree/main/Analysis/Applications/StitchingChecker): an application to stitch multiple FOV recorded from different positions of the cortext. It can load in wide-field image as a reference for FOV alignment and can also take the retinotopic mapping result in for identifying different visual cortices. The precise alginment of FOVs is confirmed by i) overlapping of the landmarks between FOVs and the wide-field image, or between neighbouring FOVS; ii) peak cross-correlation between FOVs and the wide-field image, or between neighbouring FOVs; and iii) overlapping of the repeated cells in neighbouring FOVS. We also found this application can be used to register imagings recorded in multiple days. More details in [Wiki page](https://github.com/WeijianZong/MINI2P_toolbox/wiki/StitchingChecker.mlapp)
-     ![image](https://user-images.githubusercontent.com/43905023/127649125-7b5b9de3-53f1-4d65-8fc2-63f9bdea75a4.png)
+     ![image](https://github.com/WeijianZong/MINI2P_toolbox/blob/effa456578ddc0eb99795abb82c57117ab69400c/Analysis/Applications/StitchingChecker/StitchingChecker%20operation_overview.gif)
 
      d) [DistortionCleaner.mlapp](https://github.com/WeijianZong/MINI2P_toolbox/tree/main/Analysis/Applications/DistortionCleaner)：an application to elimiate the scanning distortion of MINI2P imaging, callibrate FOV and pixel size, and generate transform matrix. More details in [Wiki page](https://github.com/WeijianZong/MINI2P_toolbox/wiki/DistortionCleaner.mlapp)
      ![image](https://user-images.githubusercontent.com/43905023/127650948-b8ef7cc8-8c40-49b2-b374-dba90cc2844a.png)
 
 4) [Documents](https://github.com/WeijianZong/MINI2P_toolbox/tree/main/Documents)
 
-
-## Installation: 
-  Most of the codes in this toolbox were written in Matlab (the python version will be published in the future). Please make sure the Matlab (recommend version 2020b) was installed in your computer. Firstly, download or clone the whole repository in a local foler. Then, include folder and subfolders \MINI2P_toolbox\MINI2P_toolbox\codes in Matlab search path by pressing "set path” in the home toolstrip of Matlab, then “add with subfolders...". 
 
 ## Usage:
   Applications NATEX, StitchingChecker and DistortionCleaner were written with Matlab app designer. In order to use these softwares, please press "open” in the home toolstrip of Matlab, select the software, wait until the app designer interface pops out, and then press "run". The details about how to use these codes and softwares are in wiki pages of this repository.
