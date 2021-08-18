@@ -43,9 +43,6 @@
 4) [Documents](https://github.com/WeijianZong/MINI2P_toolbox/tree/main/Documents)
 
 
-## Installation: 
-  Most of the codes in this toolbox were written in Matlab (the python version will be published in the future). Please make sure the Matlab (recommend version 2020b) was installed in your computer. Firstly, download or clone the whole repository in a local foler. Then, include folder and subfolders \MINI2P_toolbox\MINI2P_toolbox\codes in Matlab search path by pressing "set path” in the home toolstrip of Matlab, then “add with subfolders...". 
-
 ## Usage:
   Applications NATEX, StitchingChecker and DistortionCleaner were written with Matlab app designer. In order to use these softwares, please press "open” in the home toolstrip of Matlab, select the software, wait until the app designer interface pops out, and then press "run". The details about how to use these codes and softwares are in wiki pages of this repository.
 
