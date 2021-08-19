@@ -268,7 +268,7 @@ box off
 % set(gca,'color',[0 0 0]);
 % set(gcf,'color',[0 0 0]);
 %%
-Gridcell_overlapped=[78,102,150,159,217,280,308,317];
+Gridcell_overlapped=[2,30,93,115,134];
 GridCellAnalysis.Gridcell_overlapped=Gridcell_overlapped;
 %%
 save ([ExperimentInformation.RawDataAddress,'\GridCellAnalysis.mat'],'GridCellAnalysis','-v7.3');

@@ -64,14 +64,14 @@ for i=1:1:FOV_Total
     TotalCell=StichingPoor{i,1}.Information.ExperimentInformation.TotalCell+TotalCell;
 end
 %%
-FOVposition=load('FOVposition.mat');
+% FOVposition=load('FOVposition.mat');
 
 % 
-% FOVposition=[185,117;...
-%     15,178;...
-%     190,8;...
-%     226,178;...
-%     21,0];
+FOVposition=[185,117;...
+    15,178;...
+    190,8;...
+    226,178;...
+    21,0];
 %%
 for    i=1:1:FOV_Total
     StichingPoor{i,1}.StitchingPosition=FOVposition(i,:);
@@ -588,27 +588,32 @@ height=2000;
 set(gcf,'position',[x0,y0,width,height])
 j=1;
 for k=1:1:size(GridCellMatrix,1)
+
     subplot(21,15,k,'align')
     FOV_ID=GridCellMatrix(DVrank_GC(k),1);
+    FOV_ID
     i=GridCellMatrix(DVrank_GC(k),2);
-    MAP=StichingPoor{FOV_ID,1}.GridCellAnalysis.GridCellAnalysis.ActivityMap{1,i}.z;
-    MAX=prctile(MAP(:),99.5);
-    %             imagesc(flipud((MAP-min(min(MAP)))./(max(max(MAP))-min(min(MAP)))),'AlphaData',MAP>0);
-    imagesc(flipud(MAP./MAX),'AlphaData',(flipud(MAP)>0));
-    CMP=WJplots.CMP.inferno(256);
-    %             colormap(CMP)
-    %             colormap(parula)
-    %             colormap(jet)
-    caxis([0 1] );
-    ylim([0 size(MAP,1)])
-    xlim([0 size(MAP,2)])
-    %             title(['#',num2str(i),' GC:',num2str(StichingPoor{FOV_ID,1}.GridCellAnalysis.GridCellAnalysis.GridScore_shuffled(i,Shuffling+3,1),'%.2f'),' P:',num2str(max(max(MAP)),'%.2f')]);
-    %             title(['#',num2str(i),' GC:',num2str(StichingPoor{FOV_ID,1}.GridCellAnalysis.GridCellAnalysis.GridScore_shuffled(i,Shuffling+3,1),'%.2f'),' P:',num2str(max(max(MAP)),'%.2f')]);
-    %             title(['P ',num2str(max(MAP(:)),'%.2f')],'FontSize',7);
-    
-    daspect([1 1 1]);
-    box off
-    axis off
+    if ~isempty(StichingPoor{FOV_ID,1}.GridCellAnalysis.GridCellAnalysis.ActivityMap{1,i})
+        MAP=StichingPoor{FOV_ID,1}.GridCellAnalysis.GridCellAnalysis.ActivityMap{1,i}.z;
+        MAX=prctile(MAP(:),99.5);
+        %             imagesc(flipud((MAP-min(min(MAP)))./(max(max(MAP))-min(min(MAP)))),'AlphaData',MAP>0);
+        imagesc(flipud(MAP./MAX),'AlphaData',(flipud(MAP)>0));
+        CMP=WJplots.CMP.inferno(256);
+                    colormap(CMP)
+        %             colormap(parula)
+        %             colormap(jet)
+        caxis([0 1] );
+        ylim([0 size(MAP,1)])
+        xlim([0 size(MAP,2)])
+        %             title(['#',num2str(i),' GC:',num2str(StichingPoor{FOV_ID,1}.GridCellAnalysis.GridCellAnalysis.GridScore_shuffled(i,Shuffling+3,1),'%.2f'),' P:',num2str(max(max(MAP)),'%.2f')]);
+        %             title(['#',num2str(i),' GC:',num2str(StichingPoor{FOV_ID,1}.GridCellAnalysis.GridCellAnalysis.GridScore_shuffled(i,Shuffling+3,1),'%.2f'),' P:',num2str(max(max(MAP)),'%.2f')]);
+        %             title(['P ',num2str(max(MAP(:)),'%.2f')],'FontSize',7);
+
+        daspect([1 1 1]);
+        box off
+        axis off
+    else
+    end
 end
 set(gca,'color',[1 1 1]);
 set(gcf,'color',[1 1 1]);
@@ -630,23 +635,26 @@ for k=1:1:size(GridCellMatrix,1)
     subplot(21,15,k,'align')
     FOV_ID=GridCellMatrix(DVrank_GC(k),1);
     i=GridCellMatrix(DVrank_GC(k),2);
-    MAP=StichingPoor{FOV_ID,1}.GridCellAnalysis.GridCellAnalysis.AutocorrelationMap{1,i};
-    MIN=min(MAP(:));
-    %             imagesc(flipud((MAP-min(min(MAP)))./(max(max(MAP))-min(min(MAP)))),'AlphaData',MAP>0);
-    imagesc(flipud((MAP-MIN)./(1-MIN)));
-    %             CMP=WJplots.CMP.inferno(256);
-    %             colormap(CMP)
-    %             colormap(parula)
-    colormap(jet)
-    caxis([0 1] );
-    ylim([0 size(MAP,1)])
-    xlim([0 size(MAP,2)])
-    %             title(['#',num2str(i),' GC:',num2str(StichingPoor{FOV_ID,1}.GridCellAnalysis.GridCellAnalysis.GridScore_shuffled(i,Shuffling+3,1),'%.2f'),' P:',num2str(max(max(MAP)),'%.2f')]);
-    %             title(['G ',num2str(StichingPoor{FOV_ID,1}.GridCellAnalysis.GridCellAnalysis.GridScore_shuffled(i,Shuffling+3,1),'%.2f')]);
-    
-    daspect([1 1 1]);
-    box off
-    axis off
+    if ~isempty(StichingPoor{FOV_ID,1}.GridCellAnalysis.GridCellAnalysis.AutocorrelationMap{1,i})
+        MAP=StichingPoor{FOV_ID,1}.GridCellAnalysis.GridCellAnalysis.AutocorrelationMap{1,i};
+        MIN=min(MAP(:));
+        %             imagesc(flipud((MAP-min(min(MAP)))./(max(max(MAP))-min(min(MAP)))),'AlphaData',MAP>0);
+        imagesc(flipud((MAP-MIN)./(1-MIN)));
+        %             CMP=WJplots.CMP.inferno(256);
+        %             colormap(CMP)
+        %             colormap(parula)
+        colormap(jet)
+        caxis([0 1] );
+        ylim([0 size(MAP,1)])
+        xlim([0 size(MAP,2)])
+        %             title(['#',num2str(i),' GC:',num2str(StichingPoor{FOV_ID,1}.GridCellAnalysis.GridCellAnalysis.GridScore_shuffled(i,Shuffling+3,1),'%.2f'),' P:',num2str(max(max(MAP)),'%.2f')]);
+        %             title(['G ',num2str(StichingPoor{FOV_ID,1}.GridCellAnalysis.GridCellAnalysis.GridScore_shuffled(i,Shuffling+3,1),'%.2f')]);
+        
+        daspect([1 1 1]);
+        box off
+        axis off
+    else
+    end
 end
 set(gca,'color',[1 1 1]);
 set(gcf,'color',[1 1 1]);
@@ -695,10 +703,10 @@ for k=1:1:size(GridCellMatrix,1)
     Max=max(Event(:));
     %             scatter(Position(:,1)+85*(P-1),Position(:,2)-85*(S-1),8*Event./Max,CMP(51-S,:),'filled',0.5)
     %             scatter(Position(:,1)+90*(P-1),Position(:,2)-90*(S-1),3*sqrt(sqrt(Event./Max)),CMP(51-S,:),'filled','MarkerFaceAlpha',0.8)
-    scatter(Position(:,1)+92*(P-1),Position(:,2)-92*(S-1),3*sqrt(sqrt(Event./Max)),[1 0 0],'filled','MarkerFaceAlpha',0.8)
+    scatter(Position(:,1)+100*(P-1),Position(:,2)-100*(S-1),3*sqrt(sqrt(Event./Max)),[1 0 0],'filled','MarkerFaceAlpha',0.8)
     %             text(92*(P-1),-92*(S-1),[num2str(FOV_ID),'-',num2str(i)]);
-    ylim([-92*21,48])
-    xlim([-48,92*14])
+    ylim([-100*21,50])
+    xlim([-50,100*14])
     %             title(['#',num2str(i),' GC:',num2str(StichingPoor{FOV_ID,1}.GridCellAnalysis.GridCellAnalysis.GridScore_shuffled(i,Shuffling+3,1),'%.2f'),' P:',num2str(max(max(MAP)),'%.2f')]);
     %             title(['#',num2str(i)]);
     
