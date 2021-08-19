@@ -1,6 +1,9 @@
 close all;
+%%
+load('ExperimentInformation.mat');
+load('NAT.mat');
 %% paremater settings
-MapSmooth=3;
+MapSmooth=2.5;
 MapBinsize=2.5; % cm
 SpeedThreadhold=2.5; %cm/mm
 MinEventCount=100;
@@ -265,7 +268,7 @@ box off
 % set(gca,'color',[0 0 0]);
 % set(gcf,'color',[0 0 0]);
 %%
-Gridcell_overlapped=[39];
+Gridcell_overlapped=[78,102,150,159,217,280,308,317];
 GridCellAnalysis.Gridcell_overlapped=Gridcell_overlapped;
 %%
 save ([ExperimentInformation.RawDataAddress,'\GridCellAnalysis.mat'],'GridCellAnalysis','-v7.3');
