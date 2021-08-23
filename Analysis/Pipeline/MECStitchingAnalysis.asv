@@ -590,7 +590,7 @@ set(gcf,'position',[x0,y0,width,height])
 j=1;
 for k=1:1:size(GridCellMatrix,1)
 
-    subplot(19,15,k,'align')
+    subplot(21,15,k,'align')
     FOV_ID=GridCellMatrix(DVrank_GC(k),1);
     FOV_ID
     i=GridCellMatrix(DVrank_GC(k),2);
@@ -633,7 +633,7 @@ height=2000;
 set(gcf,'position',[x0,y0,width,height])
 j=1;
 for k=1:1:size(GridCellMatrix,1)
-    subplot(19,15,k,'align')
+    subplot(21,15,k,'align')
     FOV_ID=GridCellMatrix(DVrank_GC(k),1);
     i=GridCellMatrix(DVrank_GC(k),2);
     if ~isempty(StichingPoor{FOV_ID,1}.GridCellAnalysis.GridCellAnalysis.AutocorrelationMap{1,i})
@@ -704,10 +704,10 @@ for k=1:1:size(GridCellMatrix,1)
     Max=max(Event(:));
     %             scatter(Position(:,1)+85*(P-1),Position(:,2)-85*(S-1),8*Event./Max,CMP(51-S,:),'filled',0.5)
     %             scatter(Position(:,1)+90*(P-1),Position(:,2)-90*(S-1),3*sqrt(sqrt(Event./Max)),CMP(51-S,:),'filled','MarkerFaceAlpha',0.8)
-    scatter(Position(:,1)+105*(P-1),Position(:,2)-105*(S-1),3*sqrt(sqrt(Event./Max)),[1 0 0],'filled','MarkerFaceAlpha',0.8)
+    scatter(Position(:,1)+100*(P-1),Position(:,2)-100*(S-1),3*sqrt(sqrt(Event./Max)),[1 0 0],'filled','MarkerFaceAlpha',0.8)
     %             text(92*(P-1),-92*(S-1),[num2str(FOV_ID),'-',num2str(i)]);
-    ylim([-105*18,55])
-    xlim([-55,105*15])
+    ylim([-100*18,50])
+    xlim([-50,100*14])
     %             title(['#',num2str(i),' GC:',num2str(StichingPoor{FOV_ID,1}.GridCellAnalysis.GridCellAnalysis.GridScore_shuffled(i,Shuffling+3,1),'%.2f'),' P:',num2str(max(max(MAP)),'%.2f')]);
     %             title(['#',num2str(i)]);
     
@@ -728,7 +728,6 @@ height=300;
 set(gcf,'position',[x0,y0,width,height])
 SNR_gridcell=GridCellMatrix(:,7);
 WJplots.Violinplot.violinplot(SNR_gridcell);
-    xlim([0.5 1.5])
 
 %%
 GS_gridcell=zeros(size(GridCellMatrix,1),1003);
@@ -796,11 +795,11 @@ figure
 x0=100;
 y0=100;
 width=280;
-height=300;
+height=330;
 set(gcf,'position',[x0,y0,width,height])
 histogram(100*ChanceWin/TotalNumber_GC_chance,10,'Normalization', 'probability','FaceColor',[0.3 0.3 0.3],'EdgeColor','none');
 hold
-plot(100.*[size(GridCell_inMEC,1)/TotalNumber size(GridCell_inMEC,1)/TotalNumber],[0 0.15],'LineWidth',5,'color',[217 83 25]/256);
+plot(100.*[size(GridCell_inMEC,1)/TotalNumber size(GridCell_inMEC,1)/TotalNumber],[0 0.15],'LineWidth',3,'color',[1 0 0]);
 box off
 set(gca, 'TickDir', 'out')
 xlim([-0.5 40])
@@ -921,7 +920,7 @@ y0=10;
 set(gcf,'position',[x0,y0,width,height])
 j=1;
 FOV_ID=1;
-i=3;
+i=4;
 Peak=max(max(StichingPoor{FOV_ID,1}.GridCellAnalysis.GridCellAnalysis.ActivityMap{1,i}.z));
 subplot(2,2,1)
 Bestshift=StichingPoor{FOV_ID,1}.GridCellAnalysis.GridCellAnalysis.GridBestShift(i);
@@ -940,12 +939,12 @@ Max=max(Event(:));
 plot(AnimaPosition(:,1),AnimaPosition(:,2),'color', [0.6 0.6 0.6],'LineWidth',0.5);
 hold on
 scatter(EventPosition(:,1),EventPosition(:,2),40*(Event./Max),CMP(120,:),'filled','MarkerFaceAlpha',0.8)
-ylim([-44,44])
-xlim([-44,44])
+ylim([-41,41])
+xlim([-41,41])
 title([num2str(FOV_ID),'-',num2str(i),' GC:',num2str(StichingPoor{FOV_ID,1}.GridCellAnalysis.GridCellAnalysis.GridScore_shuffled(i,Shuffling+3,1),'%.2f'),' P:',num2str(Peak,'%.2f')]);
 daspect([1 1 1]);
 box off
-% axis off
+axis off
 
 subplot(2,2,2)
 MAP=StichingPoor{FOV_ID,1}.GridCellAnalysis.GridCellAnalysis.ActivityMap{1,i}.z;

@@ -11,9 +11,11 @@ MinSNR=3;
 Shuffling=1000;
 Shuffling_mininterval=30; %second
 MinTime=0.1; %second
-CorrectionScan=[-6 -4 -2 0 2 4 6];
+CorrectionScan=[-4 -2 0 2 4];
 Limit=[-41 41 -41 41];
 Radii=[5 5];
+%%
+
 GridBestShift=zeros(ExperimentInformation.Session,ExperimentInformation.TotalCell);
 %% shuffling
 SelectedFrame_raw=cell(ExperimentInformation.Session,ExperimentInformation.TotalCell); %% which frame in each session should be used to do analyses for each cell
@@ -59,7 +61,7 @@ for j=1:1:ExperimentInformation.Session
             PositionTrain=PositionTrain_raw(SelectedFrame_filtered,:);
             ActivityMap{j,i}=analyses.map(PositionTrain,EventTrain,'smooth',MapSmooth,'binWidth',MapBinsize,'minTime',MinTime,'limits',Limit);
             AutocorrelationMap{j,i}=analyses.autocorrelation(ActivityMap{j,i}.z);
-            [ GridScore_shuffled(i,Shuffling+3,j),GridsStat{j,i},Centerfield,~,ScoreRadius]=analyses.gridnessScore(AutocorrelationMap{j,i});
+            [ GridScore_tem,GridsStat{j,i},Centerfield,~,ScoreRadius]=analyses.gridnessScore(AutocorrelationMap{j,i});
             
             if ~isnan(Gridscore_best) &&  ~isempty(GridsStat{j,i}.spacing)
                 Orientationcheck=GridsStat{j,i}.orientation;
@@ -81,6 +83,7 @@ for j=1:1:ExperimentInformation.Session
                         end
                         GridScore_shuffled(i,Shuffling+1,j)=prctile(GridScore_shuffled(i,1:Shuffling,j),95);
                         GridScore_shuffled(i,Shuffling+2,j)=prctile(GridScore_shuffled(i,1:Shuffling,j),99);
+                        GridScore_shuffled(i,Shuffling+3,j)=GridScore_tem;                       
                     else
                     end
                 else
@@ -144,7 +147,8 @@ for i=1:1:size(GridCellAnalysis.IsGridCell{j,1},2)
     caxis([0 1] );
     ylim([0 size(MAP,1)])
     xlim([0 size(MAP,2)])
-    title(['#',num2str(GridCellAnalysis.IsGridCell{j,1}(i)),' GC:',num2str(GridCellAnalysis.GridScore_shuffled(GridCellAnalysis.IsGridCell{j,1}(i),Shuffling+3,j),'%.2f'),' P:',num2str(max(max(MAP)),'%.2f')]);
+%     title(['#',num2str(GridCellAnalysis.IsGridCell{j,1}(i)),' GC:',num2str(GridCellAnalysis.GridScore_shuffled(GridCellAnalysis.IsGridCell{j,1}(i),Shuffling+3,j),'%.2f'),' P:',num2str(max(max(MAP)),'%.2f')]);
+    title(['#',num2str(GridCellAnalysis.IsGridCell{j,1}(i))]);
     daspect([1 1 1]);
     box off
     axis off
@@ -212,7 +216,9 @@ for i=1:1:size(GridCellAnalysis.IsGridCell{j,1},2)
     caxis([0 1] );
     ylim([0 size(MAP_combine,1)])
     xlim([0 size(MAP_combine,2)])
-    title(['#',num2str(GridCellAnalysis.IsGridCell{j,1}(i)),' GC:',num2str(GridCellAnalysis.GridScore_shuffled(GridCellAnalysis.IsGridCell{j,1}(i),Shuffling+3,j),'%.2f'),' P:',num2str(max(max(MAP1)),'%.2f')]);
+%     title(['#',num2str(GridCellAnalysis.IsGridCell{j,1}(i)),' GC:',num2str(GridCellAnalysis.GridScore_shuffled(GridCellAnalysis.IsGridCell{j,1}(i),Shuffling+3,j),'%.2f'),' P:',num2str(max(max(MAP1)),'%.2f')]);
+    title(['#',num2str(GridCellAnalysis.IsGridCell{j,1}(i))]);
+
     daspect([1 1 1]);
     box off
     axis off
@@ -258,9 +264,13 @@ for k=1:1:size(GridCellAnalysis.IsGridCell{j,1},2)
     Event=NAT{1,j}(Event_filtered,4*i+12);
     Max=max(Event(:));
     scatter(Position(:,1)+100*(P-1),Position(:,2)-100*(S-1),15*(sqrt(Event./Max)),[1 0 0],'filled','MarkerFaceAlpha',0.8)
+%     text(100*(P-1),-100*(S-1),num2str(i));
     ylim([-100*(round(size(GridCellAnalysis.IsGridCell{j,1},2)/coluum)+0.5),50])
     xlim([-50,100*coluum])    
     daspect([1 1 1]);
+
+
+
     hold on    
     axis off
 end
@@ -268,7 +278,7 @@ box off
 % set(gca,'color',[0 0 0]);
 % set(gcf,'color',[0 0 0]);
 %%
-Gridcell_overlapped=[2,30,93,115,134];
+Gridcell_overlapped=[];
 GridCellAnalysis.Gridcell_overlapped=Gridcell_overlapped;
 %%
 save ([ExperimentInformation.RawDataAddress,'\GridCellAnalysis.mat'],'GridCellAnalysis','-v7.3');

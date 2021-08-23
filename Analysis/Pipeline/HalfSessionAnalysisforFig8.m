@@ -3,7 +3,7 @@ close all;
 GridCellAnalysis.IsGridCell{1,1}=StichingPoor{2,1}.GridCellAnalysis.GridCellAnalysis.IsGridCell{1,1};
 %%
 % paremater settings
-MapSmooth=2;
+MapSmooth=2.5;
 MapBinsize=2.5; % cm
 SpeedThreadhold=2.5; %cm/mm
 MinEventCount=100;
@@ -42,18 +42,31 @@ color_scheme_aaas = [...
 j=1;
 for k=1:1:size(GridCellAnalysis.IsGridCell{1,1},2)
     i=GridCellAnalysis.IsGridCell{1,1}(k);
-    SelectedFrame_raw=find(~isnan(NAAK{1,j}(:,4*i+10)));
-    SelectedFrame_filtered=intersect(find(~isnan(NAAK{1,j}(:,4*i+10))),find(NAAK{1,j}(:,6)==1));% filter out the frames with speed valid
-    SelectedFrame_filtered=intersect(SelectedFrame_filtered,find(NAAK{1,j}(:,5)>SpeedThreadhold));% filter out the frames with speed threadhold
+    SelectedFrame_raw=find(~isnan(NAT{1,j}(:,4*i+10)));
+    SelectedFrame_filtered=intersect(find(~isnan(NAT{1,j}(:,4*i+10))),find(NAT{1,j}(:,6)==1));% filter out the frames with speed valid
+    SelectedFrame_filtered=intersect(SelectedFrame_filtered,find(NAT{1,j}(:,5)>SpeedThreadhold));% filter out the frames with speed threadhold
     SelectedFrame_filtered_firsthalf=SelectedFrame_filtered(SelectedFrame_filtered<ExperimentInformation.FrameinEachSession/2);
     SelectedFrame_filtered_secondhalf=SelectedFrame_filtered(SelectedFrame_filtered>ExperimentInformation.FrameinEachSession/2);
-    Event_filtered=intersect(find(NAAK{1,j}(:,4*i+12)>0),find(NAAK{1,j}(:,6)>=0));% filter out the frames with speed valid
-    Event_filtered=intersect(Event_filtered,find(NAAK{1,j}(:,5)>SpeedThreadhold));% filter out the frames with speed threadhold   
-    EventTrain=NAAK{1,j}(SelectedFrame_filtered,[1 4*i+12]);
-    EventTrain_firsthalf=NAAK{1,j}(SelectedFrame_filtered_firsthalf,[1 4*i+12]);
-    EventTrain_secondhalf=NAAK{1,j}(SelectedFrame_filtered_secondhalf,[1 4*i+12]);   
-    PositionTrain_firsthalf=NAAK{1,j}(SelectedFrame_filtered_firsthalf,1:3);
-    PositionTrain_secondthalf=NAAK{1,j}(SelectedFrame_filtered_secondhalf,1:3);
+    Event_filtered=intersect(find(NAT{1,j}(:,4*i+12)>0),find(NAT{1,j}(:,6)>=0));% filter out the frames with speed valid
+    Event_filtered=intersect(Event_filtered,find(NAT{1,j}(:,5)>SpeedThreadhold));% filter out the frames with speed threadhold   
+    EventTrain=NAT{1,j}(SelectedFrame_filtered,[1 4*i+12]);
+    EventTrain_firsthalf=NAT{1,j}(SelectedFrame_filtered_firsthalf,[1 4*i+12]);
+    EventTrain_secondhalf=NAT{1,j}(SelectedFrame_filtered_secondhalf,[1 4*i+12]);   
+    PositionTrain_firsthalf=NAT{1,j}(SelectedFrame_filtered_firsthalf,1:3);
+    PositionTrain_secondthalf=NAT{1,j}(SelectedFrame_filtered_secondhalf,1:3);
+    DirectionTrain_firsthald=NAT{1,j}(SelectedFrame_filtered_firsthalf,4);
+    DirectionTrain_secondthalf=NAT{1,j}(SelectedFrame_filtered_secondhalf,4);
+    Shift=GridCellAnalysis.GridBestShift(i);
+    
+    PositionTrain_firsthalf(:,2)=PositionTrain_firsthalf(:,2)+Shift.* cos(DirectionTrain_firsthald * pi/180);
+    PositionTrain_firsthalf(:,3)=PositionTrain_firsthalf(:,3)+Shift.* sin(DirectionTrain_firsthald * pi/180);
+    
+    PositionTrain_secondthalf(:,2)=PositionTrain_secondthalf(:,2)+Shift.* cos(DirectionTrain_secondthalf.* pi/180);
+    PositionTrain_secondthalf(:,3)=PositionTrain_secondthalf(:,3)+Shift.* sin(DirectionTrain_secondthalf.* pi/180);    
+    
+    
+    
+    
     [Gridscore_full(k,1),GridsStat_full{k,1},GridCenter,~,GridsScoreRadius]=analyses.gridnessScore(GridCellAnalysis.AutocorrelationMap{1,i});  
     ActivityMap_firsthalf{k,1}=analyses.map(PositionTrain_firsthalf,EventTrain_firsthalf,'smooth',MapSmooth,'binWidth',MapBinsize,'minTime',0,'limits',Limit);                                 
     AutocorrelationMap_firsthalf{k,1}=analyses.autocorrelation(ActivityMap_firsthalf{k,1}.z);               
@@ -129,9 +142,9 @@ xticks([1 2]);
 yticks([0:0.2:0.6]);
 ylim([0 0.6]);
 %%
-selectcell=1;
-% CellID=Gridcell_inbothhalf(selectcell);
-CellID=Gridcell_still_firsthalf(selectcell);
+selectcell=27;
+CellID=Gridcell_inbothhalf(selectcell);
+% CellID=Gridcell_still_firsthalf(selectcell);
 j=1;
 close all
 figure
@@ -143,20 +156,20 @@ height=600;
 set(gcf,'position',[x0,y0,width,height])
 CMP=WJplots.CMP.inferno(256);
     i=GridCellAnalysis.IsGridCell{1,1}(CellID);
-    SelectedFrame_raw=find(~isnan(NAAK{1,j}(:,4*i+10)));
-    SelectedFrame_filtered=intersect(find(~isnan(NAAK{1,j}(:,4*i+10))),find(NAAK{1,j}(:,6)==1));% filter out the frames with speed valid
-    SelectedFrame_filtered=intersect(SelectedFrame_filtered,find(NAAK{1,j}(:,5)>SpeedThreadhold));% filter out the frames with speed threadhold
+    SelectedFrame_raw=find(~isnan(NAT{1,j}(:,4*i+10)));
+    SelectedFrame_filtered=intersect(find(~isnan(NAT{1,j}(:,4*i+10))),find(NAT{1,j}(:,6)==1));% filter out the frames with speed valid
+    SelectedFrame_filtered=intersect(SelectedFrame_filtered,find(NAT{1,j}(:,5)>SpeedThreadhold));% filter out the frames with speed threadhold
     SelectedFrame_filtered_firsthalf=SelectedFrame_filtered(SelectedFrame_filtered<ExperimentInformation.FrameinEachSession/2);
     SelectedFrame_filtered_secondhalf=SelectedFrame_filtered(SelectedFrame_filtered>ExperimentInformation.FrameinEachSession/2);
-    Event_filtered=intersect(find(NAAK{1,j}(:,4*i+12)>0),find(NAAK{1,j}(:,6)==1));% filter out the frames with speed valid
-    Event_filtered=intersect(Event_filtered,find(NAAK{1,j}(:,5)>SpeedThreadhold));% filter out the frames with speed threadhold   
-    EventTrain=NAAK{1,j}(SelectedFrame_filtered,[1 4*i+12]);
-    EventTrain_firsthalf=NAAK{1,j}(SelectedFrame_filtered_firsthalf,[1 4*i+12]);
+    Event_filtered=intersect(find(NAT{1,j}(:,4*i+12)>0),find(NAT{1,j}(:,6)==1));% filter out the frames with speed valid
+    Event_filtered=intersect(Event_filtered,find(NAT{1,j}(:,5)>SpeedThreadhold));% filter out the frames with speed threadhold   
+    EventTrain=NAT{1,j}(SelectedFrame_filtered,[1 4*i+12]);
+    EventTrain_firsthalf=NAT{1,j}(SelectedFrame_filtered_firsthalf,[1 4*i+12]);
     Event_filtered_firsthalf=EventTrain_firsthalf(EventTrain_firsthalf(:,2)>0,:);
-    EventTrain_secondhalf=NAAK{1,j}(SelectedFrame_filtered_secondhalf,[1 4*i+12]); 
+    EventTrain_secondhalf=NAT{1,j}(SelectedFrame_filtered_secondhalf,[1 4*i+12]); 
     Event_filtered_secondhalf=EventTrain_secondhalf(EventTrain_secondhalf(:,2)>0,:);
-    PositionTrain_firsthalf=NAAK{1,j}(SelectedFrame_filtered_firsthalf,1:3);
-    PositionTrain_secondhalf=NAAK{1,j}(SelectedFrame_filtered_secondhalf,1:3);
+    PositionTrain_firsthalf=NAT{1,j}(SelectedFrame_filtered_firsthalf,1:3);
+    PositionTrain_secondhalf=NAT{1,j}(SelectedFrame_filtered_secondhalf,1:3);
 
 
 subplot(4,2,1)
