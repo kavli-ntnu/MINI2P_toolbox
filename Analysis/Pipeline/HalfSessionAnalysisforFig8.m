@@ -12,7 +12,7 @@ Shuffling=1000;
 Shuffling_mininterval=30;
 MinTime=0.1;
 CorrectionScan=[1 0 -1 -2];
-Limit=[-40 40 -40 40];
+Limit=[-48 48 -48 48];
 Radii=[5 5];
 GridBestShift=zeros(ExperimentInformation.Session,ExperimentInformation.TotalCell);
 Gridscore_raw=zeros(length(size(GridCellAnalysis.IsGridCell{1,1},2)),3);
@@ -139,12 +139,12 @@ bar(2,length(Gridcell_still_secondhalf)./size(GridCellAnalysis.IsGridCell{1,1},2
 box off 
 set(gca, 'TickDir', 'out')
 xticks([1 2]);
-yticks([0:0.2:0.6]);
-ylim([0 0.6]);
+yticks([0:0.2:0.8]);
+ylim([0 0.8]);
 %%
-selectcell=27;
-CellID=Gridcell_inbothhalf(selectcell);
-% CellID=Gridcell_still_firsthalf(selectcell);
+selectcell=5;
+% CellID=Gridcell_inbothhalf(selectcell);
+CellID=Gridcell_onlyinfirsthalf(selectcell);
 j=1;
 close all
 figure
@@ -156,6 +156,7 @@ height=600;
 set(gcf,'position',[x0,y0,width,height])
 CMP=WJplots.CMP.inferno(256);
     i=GridCellAnalysis.IsGridCell{1,1}(CellID);
+%         i=1
     SelectedFrame_raw=find(~isnan(NAT{1,j}(:,4*i+10)));
     SelectedFrame_filtered=intersect(find(~isnan(NAT{1,j}(:,4*i+10))),find(NAT{1,j}(:,6)==1));% filter out the frames with speed valid
     SelectedFrame_filtered=intersect(SelectedFrame_filtered,find(NAT{1,j}(:,5)>SpeedThreadhold));% filter out the frames with speed threadhold
@@ -178,8 +179,8 @@ Max=max(Event_filtered_firsthalf(:,2));
 plot(PositionTrain_firsthalf(:,2),PositionTrain_firsthalf(:,3),'color', [0.6 0.6 0.6],'LineWidth',0.5);
 hold on
 scatter(PositionTrain_firsthalf(EventTrain_firsthalf(:,2)>0,2),PositionTrain_firsthalf(EventTrain_firsthalf(:,2)>0,3),20*(Event_filtered_firsthalf(:,2)./Max),color_scheme_aaas(2,:),'filled','MarkerFaceAlpha',0.8)  
-ylim([-41,41])
-xlim([-41,41])
+ylim([-48,48])
+xlim([-48,48])
 title([num2str(i),'- frist half']);
 daspect([1 1 1]); 
 box off
@@ -191,8 +192,8 @@ Max=max(Event_filtered_secondhalf(:,2));
 plot(PositionTrain_secondhalf(:,2),PositionTrain_secondhalf(:,3),'color', [0.6 0.6 0.6],'LineWidth',0.5);
 hold on
 scatter(PositionTrain_secondhalf(EventTrain_secondhalf(:,2)>0,2),PositionTrain_secondhalf(EventTrain_secondhalf(:,2)>0,3),20*(Event_filtered_secondhalf(:,2)./Max),color_scheme_aaas(2,:),'filled','MarkerFaceAlpha',0.8)  
-ylim([-41,41])
-xlim([-41,41])
+ylim([-48,48])
+xlim([-48,48])
 title([num2str(i),'- second half']);
 daspect([1 1 1]); 
 box off

@@ -14,12 +14,8 @@ MinTime=0.1; %second
 CorrectionScan=[-4 -2 0 2 4];
 Limit=[-48 48 -48 48];
 Radii=[5 5];
-%%
-
 GridBestShift=zeros(ExperimentInformation.Session,ExperimentInformation.TotalCell);
 %% shuffling
-SelectedFrame_raw=cell(ExperimentInformation.Session,ExperimentInformation.TotalCell); %% which frame in each session should be used to do analyses for each cell
-SelectedFrame_filtered=cell(ExperimentInformation.Session,ExperimentInformation.TotalCell); %% which frame in each session should be used to do analyses for each cell, filtered by some cratirial
 ActivityMap=cell(ExperimentInformation.Session,ExperimentInformation.TotalCell);
 AutocorrelationMap=cell(ExperimentInformation.Session,ExperimentInformation.TotalCell);
 GridsStat=cell(ExperimentInformation.Session,ExperimentInformation.TotalCell); %%filtered the map with 1) speed threadhold, moving condition or other critirial.
@@ -37,16 +33,13 @@ for j=1:1:ExperimentInformation.Session
             EventTrain=NAT{1,j}(SelectedFrame_filtered,[1 4*i+12]);
             CellForAnalysis{j,1}(k)=i;
             SpatialInformation=zeros(length(CorrectionScan),1);
-            %             GridsStat_try=cell(length(CorrectionScan),1);
-            %             GridCenter_try=zeros(length(CorrectionScan),1);
-            %             GridsScoreRadius_try=cell(length(CorrectionScan),1);
             for p=1:1:length(CorrectionScan)
                 PositionTrain_raw=NAT{1,j}(:,1:3);
                 PositionTrain_raw(:,2)= PositionTrain_raw(:,2)+ (CorrectionScan(p)* cos(NAT{1,j}(:,4) * pi/180));
                 PositionTrain_raw(:,3)= PositionTrain_raw(:,3)+ (CorrectionScan(p)* sin(NAT{1,j}(:,4) * pi/180));
                 PositionTrain_try=PositionTrain_raw(SelectedFrame_filtered,:)       ;
-                ActivityMap_try=analyses.map(PositionTrain_try,EventTrain,'smooth',MapSmooth,'binWidth',MapBinsize,'minTime',MinTime,'limits',Limit);
-                [SpatialInformation_tem,~,~]=analyses.mapStatsPDF(ActivityMap_try);
+                ActivityMap_try=SpatialTuning_BNT.map(PositionTrain_try,EventTrain,'smooth',MapSmooth,'binWidth',MapBinsize,'minTime',MinTime,'limits',Limit);
+                [SpatialInformation_tem,~,~]=SpatialTuning_BNT.mapStatsPDF(ActivityMap_try);
                 SpatialInformation(p,1)=SpatialInformation_tem.content;
             end
             if ~isempty(SpatialInformation)
@@ -54,31 +47,27 @@ for j=1:1:ExperimentInformation.Session
             end
             GridBestShift(j,i)=CorrectionScan(BestShift);
             PositionTrain_raw=NAT{1,j}(:,1:3);
-            
             PositionTrain_raw(:,2)=PositionTrain_raw(:,2)+ (CorrectionScan(BestShift)* cos(NAT{1,j}(:,4) * pi/180));
             PositionTrain_raw(:,3)=PositionTrain_raw(:,3)+ (CorrectionScan(BestShift)* sin(NAT{1,j}(:,4) * pi/180));
-            
             PositionTrain=PositionTrain_raw(SelectedFrame_filtered,:);
-            ActivityMap{j,i}=analyses.map(PositionTrain,EventTrain,'smooth',MapSmooth,'binWidth',MapBinsize,'minTime',MinTime,'limits',Limit);
-            AutocorrelationMap{j,i}=analyses.autocorrelation(ActivityMap{j,i}.z);
-            [ GridScore_tem,GridsStat{j,i},Centerfield,~,ScoreRadius]=analyses.gridnessScore(AutocorrelationMap{j,i});
-            
+            ActivityMap{j,i}=SpatialTuning_BNT.map(PositionTrain,EventTrain,'smooth',MapSmooth,'binWidth',MapBinsize,'minTime',MinTime,'limits',Limit);
+            AutocorrelationMap{j,i}=SpatialTuning_BNT.autocorrelation(ActivityMap{j,i}.z);
+            [ GridScore_tem,GridsStat{j,i},Centerfield,~,ScoreRadius]=analyses.gridnessScore(AutocorrelationMap{j,i});            
             if ~isnan(Gridscore_best) &&  ~isempty(GridsStat{j,i}.spacing)
                 Orientationcheck=GridsStat{j,i}.orientation;
                 Distancecheck=GridsStat{j,i}.spacing;
                 if abs(Orientationcheck(2)-Orientationcheck(1))>30 && abs(Orientationcheck(2)-Orientationcheck(1))<90 && abs(Orientationcheck(3)-Orientationcheck(2))>30 && abs(Orientationcheck(3)-Orientationcheck(2))<90
                     if max(Distancecheck)<2*min(Distancecheck)
-%                         GridScore_shuffled(i,Shuffling+3,j)=Gridscore_best;
                         for n=1:1:Shuffling
                             xmin=Shuffling_mininterval*ExperimentInformation.Trackingframerate;
                             xmax=size(length(SelectedFrame_filtered),1)-xmin;
                             ShiftFrame=round(xmin+rand(1,1)*(xmax-xmin));
                             EventTrain_shuffled=circshift(EventTrain,ShiftFrame);
                             EventTrain_shuffled(:,1)=EventTrain(:,1);
-                            ActivityMap_shuffled=analyses.map(PositionTrain,EventTrain_shuffled,'smooth',MapSmooth,'binWidth',MapBinsize,'minTime',MinTime,'limits',Limit);
-                            AutocorrelationMap_shuffle=analyses.autocorrelation(ActivityMap_shuffled.z);
-                            GridScore_shuffled(i,n,j)= analyses.gridnessScoreShuffled(AutocorrelationMap_shuffle, Centerfield, ScoreRadius, Radii);
-                            %                                     GridScore_shuffled(i,n,j)= analyses.gridnessScore(AutocorrelationMap_shuffle);
+                            ActivityMap_shuffled=SpatialTuning_BNT.map(PositionTrain,EventTrain_shuffled,'smooth',MapSmooth,'binWidth',MapBinsize,'minTime',MinTime,'limits',Limit);
+                            AutocorrelationMap_shuffle=SpatialTuning_BNT.autocorrelation(ActivityMap_shuffled.z);
+                            GridScore_shuffled(i,n,j)= SpatialTuning_BNT.gridnessScoreShuffled(AutocorrelationMap_shuffle, Centerfield, ScoreRadius, Radii);
+                            % GridScore_shuffled(i,n,j)= analyses.gridnessScore(AutocorrelationMap_shuffle);
                             disp([num2str(i),' ',num2str(n)]);
                         end
                         GridScore_shuffled(i,Shuffling+1,j)=prctile(GridScore_shuffled(i,1:Shuffling,j),95);
@@ -94,7 +83,6 @@ for j=1:1:ExperimentInformation.Session
         end
     end
 end
-
 %% identify Grid cells
 IsGridCell=cell(ExperimentInformation.Session,1);
 for j=1:1:ExperimentInformation.Session

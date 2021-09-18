@@ -130,6 +130,7 @@ for w=1:1:TotalRun
     TotalNumber_PC_chance=1;
     while (TotalNumber_PC_chance<TotalNumber)
         for k=1:1:size(SelectCell,2)
+            if TotalNumber_PC_chance<=TotalNumber
             i=SelectCell(k);
             SelectedFrame_filtered=intersect(find(~isnan(NAT{1,j}(:,4*i+10))),find(NAT{1,j}(:,6)==1));% filter out the frames with speed valid
             SelectedFrame_filtered=intersect(SelectedFrame_filtered,find(NAT{1,j}(:,5)>SpeedThreadhold));% filter out the frames with speed threadhold
@@ -139,7 +140,7 @@ for w=1:1:TotalRun
             PositionTrain_firstHalf=NAT{1,j}(SelectedFrame_firstHalf,1:3);
             PositionTrain_secondHalf=NAT{1,j}(SelectedFrame_secondHalf,1:3);
             EventTrain=NAT{1,j}(SelectedFrame_filtered,[1 4*i+12]);
-            xmin=Shuffling_mininterval*ExperimentInformation.FrameRate;
+            xmin=Shuffling_mininterval*ExperimentInformation.Trackingframerate;
             xmax=size(length(SelectedFrame_filtered),1)-xmin;
             ShiftFrame=round(xmin+rand(1,1)*(xmax-xmin));
             EventTrain_shuffled=circshift(EventTrain,ShiftFrame);
@@ -168,21 +169,24 @@ for w=1:1:TotalRun
             end
             TotalNumber_PC_chance=TotalNumber_PC_chance+1;
             disp([num2str(w),' ', num2str(TotalNumber_PC_chance)]);
+            else
+            end
         end
     end
 end
+%%
 close all
 figure
 x0=100;
 y0=100;
-width=150;
+width=250;
 height=200;
 set(gcf,'position',[x0,y0,width,height])
-histogram(ChanceWin(1:300,1)/TotalNumber_PC_chance*100,10,'Normalization', 'probability','FaceColor',[0.3 0.3 0.3],'EdgeColor',[1 1 1]);
+histogram(ChanceWin/TotalNumber*100,10,'Normalization', 'probability','FaceColor',[0.3 0.3 0.3],'EdgeColor','none');
 hold on
-plot([100*size(IsPCCell{j,1},2)/TotalNumber 100*size(IsPCCell{j,1},2)/TotalNumber],[0 0.2],'LineWidth',3,'color',[1 0 0]);
+plot([100*size(IsPCCell{j,1},2)/TotalNumber 100*size(IsPCCell{j,1},2)/TotalNumber],[0 0.3],'LineWidth',3,'color',[1 0 0]);
 box off
 set(gca, 'TickDir', 'out')
-xlim([-0.5 6.5])
-xticks([0:15])
-ylim([0 0.3])
+xlim([-0.5 50])
+xticks([0:10:50])
+ylim([0 0.4])
