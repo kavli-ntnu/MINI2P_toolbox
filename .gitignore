@@ -5,8 +5,8 @@
 # windows
 thumbs.db
 
-# solidworks
-~$*.SLDPRT
+# Misc temp files
+~$*
 
 
 # Specific data files
