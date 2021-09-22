@@ -12,7 +12,7 @@ MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for
 
 1) [Hardware](https://github.com/kavli-ntnu/MINI2P_toolbox/tree/main/Hardware)
 
-      [3D models (and 2D drawings for custom components)](Hardware/MINI2P_2021-07-12) of all componets for bulding a complete MINI2P system.
+      [3D models (and 2D drawings for custom components)](Hardware/MINI2P_2021-07-12) of all components for bulding a complete MINI2P system.
 ![image](https://user-images.githubusercontent.com/43905023/127703645-a6ea03ea-c1aa-4eaa-a9fd-1e6e75a082ed.png)
 
 
@@ -23,11 +23,15 @@ MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for
       
       b) An example [Suite2P settings](https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Software/Suite2P%20options/GCaMP6S_P2_C1_7.25Hz_MEC.npy).
       
-      c) Three DLC model configuration files: [DLC1](https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Software/DLC%20model%20options/DLC1.yaml), [DLC2](https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Software/DLC%20model%20options/DLC2.yaml), and [DLC3](https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Software/DLC%20model%20options/DLC3.yaml). The completed trained models can be found [here](). More details in [Wiki page](https://github.com/WeijianZong/MINI2P_toolbox/wiki/DeepLabCut-trained-Models).
+      c) Three DLC model configuration files: [
+      * DLC1](Software/DLC%20model%20options/DLC1.yaml),
+      * [DLC2](Software/DLC%20model%20options/DLC2.yaml),
+      * [DLC3](Software/DLC%20model%20options/DLC3.yaml)
+      More details in [Wiki page](https://github.com/WeijianZong/MINI2P_toolbox/wiki/DeepLabCut-trained-Models).
       
       d) [AnimalTracker.vi](https://github.com/WeijianZong/MINI2P_toolbox/tree/main/Software/AnimalTracker): a Labview pragram for recording animal behaviors and synchronizing the tracking camera recording with the MINI2P imaging. More details in [Wiki page](https://github.com/WeijianZong/MINI2P_toolbox/wiki/AnimalTracker.vi)
 
-3) [Analysis](https://github.com/WeijianZong/MINI2P_toolbox/tree/main/Analysis)
+3) [Analysis](Analysis)
 
       a) [Pipelines](https://github.com/WeijianZong/MINI2P_toolbox/tree/main/Analysis/Pipeline) for spatial tuning analysis included in the paper (grid cells, place cells,etc).
 
