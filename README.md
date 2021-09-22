@@ -12,23 +12,20 @@ MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for
 
 1) [Hardware](https://github.com/kavli-ntnu/MINI2P_toolbox/tree/main/Hardware)
 
-      a) [3D models (and 2D drawings for custom components)](https://github.com/WeijianZong/MINI2P_toolbox/tree/main/Hardware/MINI2P%20system%20Version%2020210712) of all componets for bulding a complete MINI2P system.
+      [3D models (and 2D drawings for custom components)](Hardware/MINI2P_2021-07-12) of all componets for bulding a complete MINI2P system.
 ![image](https://user-images.githubusercontent.com/43905023/127703645-a6ea03ea-c1aa-4eaa-a9fd-1e6e75a082ed.png)
-      
-      b)  A list of [required hardware](https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Hardware/Minimum%20hardware%20requirement.docx) to run complete freely-moving MINI2P recordings.
 
 
-2) [Software](https://github.com/WeijianZong/MINI2P_toolbox/tree/main/Software) 
 
-      a) A list of [required software](https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Software/Minimum%20software%20requirement.docx) to run complete freely-moving MINI2P recordings and analysis.
+2) [Software](Software) 
       
-      b) Two scanimage Machine Data Files (MDF). One is for [2000Hz MEMS-L scanner](https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Software/SI%20settings/Machine_Data_File_2000Hz.m) and the other is for 5600Hz MEMS-F scanner;
+      a) Two scanimage Machine Data Files (MDF). One is for [2000Hz MEMS-L scanner](Software/SI%20settings/Machine_Data_File_2000Hz.m) and the other is for 5600Hz MEMS-F scanner;
       
-      c) An example [Suite2P settings](https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Software/Suite2P%20options/GCaMP6S_P2_C1_7.25Hz_MEC.npy).
+      b) An example [Suite2P settings](https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Software/Suite2P%20options/GCaMP6S_P2_C1_7.25Hz_MEC.npy).
       
-      d) Three DLC model configuration files: [DLC1](https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Software/DLC%20model%20options/DLC1.yaml), [DLC2](https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Software/DLC%20model%20options/DLC2.yaml), and [DLC3](https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Software/DLC%20model%20options/DLC3.yaml). The completed trained models can be found [here](). More details in [Wiki page](https://github.com/WeijianZong/MINI2P_toolbox/wiki/DeepLabCut-trained-Models).
+      c) Three DLC model configuration files: [DLC1](https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Software/DLC%20model%20options/DLC1.yaml), [DLC2](https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Software/DLC%20model%20options/DLC2.yaml), and [DLC3](https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Software/DLC%20model%20options/DLC3.yaml). The completed trained models can be found [here](). More details in [Wiki page](https://github.com/WeijianZong/MINI2P_toolbox/wiki/DeepLabCut-trained-Models).
       
-      e) [AnimalTracker.vi](https://github.com/WeijianZong/MINI2P_toolbox/tree/main/Software/AnimalTracker): a Labview pragram for recording animal behaviors and synchronizing the tracking camera recording with the MINI2P imaging. More details in [Wiki page](https://github.com/WeijianZong/MINI2P_toolbox/wiki/AnimalTracker.vi)
+      d) [AnimalTracker.vi](https://github.com/WeijianZong/MINI2P_toolbox/tree/main/Software/AnimalTracker): a Labview pragram for recording animal behaviors and synchronizing the tracking camera recording with the MINI2P imaging. More details in [Wiki page](https://github.com/WeijianZong/MINI2P_toolbox/wiki/AnimalTracker.vi)
 
 3) [Analysis](https://github.com/WeijianZong/MINI2P_toolbox/tree/main/Analysis)
 
