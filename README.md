@@ -24,21 +24,21 @@ MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for
       b) An example [Suite2P settings](https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Software/Suite2P%20options/GCaMP6S_P2_C1_7.25Hz_MEC.npy).
       
       c) Three DLC model configuration files: [
-      * DLC1](Software/DLC%20model%20options/DLC1.yaml),
+      * [DLC1](Software/DLC%20model%20options/DLC1.yaml),
       * [DLC2](Software/DLC%20model%20options/DLC2.yaml),
       * [DLC3](Software/DLC%20model%20options/DLC3.yaml)
-      More details in [Wiki page](https://github.com/WeijianZong/MINI2P_toolbox/wiki/DeepLabCut-trained-Models).
+      More details in [Documents](Documents/DeepLabCut-trained-Models.md).
       
-      d) [AnimalTracker.vi](https://github.com/WeijianZong/MINI2P_toolbox/tree/main/Software/AnimalTracker): a Labview pragram for recording animal behaviors and synchronizing the tracking camera recording with the MINI2P imaging. More details in [Wiki page](https://github.com/WeijianZong/MINI2P_toolbox/wiki/AnimalTracker.vi)
+      d) [AnimalTracker.vi](Software/AnimalTracker): a Labview pragram for recording animal behaviors and synchronizing the tracking camera recording with the MINI2P imaging. More details in [Documents](Documents/AnimalTracker.vi.md)
 
 3) [Analysis](Analysis)
 
-      a) [Pipelines](https://github.com/WeijianZong/MINI2P_toolbox/tree/main/Analysis/Pipeline) for spatial tuning analysis included in the paper (grid cells, place cells,etc).
+      a) [Pipelines](/Analysis/Pipeline) for spatial tuning analysis included in the paper (grid cells, place cells,etc).
 
-      b) [NATEX.mlapp](https://github.com/WeijianZong/MINI2P_toolbox/tree/main/Analysis/Applications/NATEX): Nat Explorer, an application to load, process and preview the neuronal activity data (from the Suite2P output) and the tracking data (from the DLC output). It also combines the neuronal activity data and tracking data into the NAT.mat (Neuron Activity aligned with Tracking Matrix) and put all necessasy information into ExperimentInformation.mat for the user-specific downsteam analysis. More details in [Wiki page](https://github.com/WeijianZong/MINI2P_toolbox/wiki/NATEX.mlapp) 
-      ![image](https://github.com/WeijianZong/MINI2P_toolbox/blob/acecff10421ba8fe03a35a9fc02a8ed57fc91d2a/Analysis/Applications/NATEX/NATEX%20operation_speedup.gif)
+      b) [NATEX.mlapp](/Analysis/Applications/NATEX): Nat Explorer, an application to load, process and preview the neuronal activity data (from the Suite2P output) and the tracking data (from the DLC output). It also combines the neuronal activity data and tracking data into the NAT.mat (Neuron Activity aligned with Tracking Matrix) and put all necessasy information into ExperimentInformation.mat for the user-specific downsteam analysis. More details in [Documents](Documents/NATEX.mlapp.md) 
+      ![image](Analysis/Applications/NATEX/NATEX%20operation_speedup.gif)
 
-      c) [StitchingChecker.mlapp](https://github.com/WeijianZong/MINI2P_toolbox/tree/main/Analysis/Applications/StitchingChecker): an application to stitch multiple FOV recorded from different positions of the cortext. It can load in wide-field image as a reference for FOV alignment and can also take the retinotopic mapping result in for identifying different visual cortices. The precise alginment of FOVs is confirmed by 
+      c) [StitchingChecker.mlapp](Analysis/Applications/StitchingChecker): an application to stitch multiple FOV recorded from different positions of the cortext. It can load in wide-field image as a reference for FOV alignment and can also take the retinotopic mapping result in for identifying different visual cortices. The precise alginment of FOVs is confirmed by 
       
       * overlapping of the landmarks between FOVs and the wide-field image, or between neighbouring FOVS; 
         
@@ -46,23 +46,28 @@ MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for
         
       * overlapping of the repeated cells in neighbouring FOVS. We also found this application can be used to register imagings recorded in multiple days. 
           
-      More details in [Wiki page](https://github.com/WeijianZong/MINI2P_toolbox/wiki/StitchingChecker.mlapp)
-     ![image](https://github.com/WeijianZong/MINI2P_toolbox/blob/effa456578ddc0eb99795abb82c57117ab69400c/Analysis/Applications/StitchingChecker/StitchingChecker%20operation_overview.gif)
+      More details in [Documents](DocumentsStitchingChecker.mlapp.md)
+     ![image](Analysis/Applications/StitchingChecker/StitchingChecker%20operation_overview.gif)
 
-     d) [DistortionCleaner.mlapp](https://github.com/WeijianZong/MINI2P_toolbox/tree/main/Analysis/Applications/DistortionCleaner)：an application to elimiate the scanning distortion of MINI2P imaging, callibrate FOV and pixel size, and generate transform matrix. More details in [Wiki page](https://github.com/WeijianZong/MINI2P_toolbox/wiki/DistortionCleaner.mlapp)
+     d) [DistortionCleaner.mlapp](Analysis/Applications/DistortionCleaner)： an application to elimiate the scanning distortion of MINI2P imaging, calibrate FOV and pixel size, and generate transform matrix. More details in [Documents](Documents/DistortionCleaner.mlapp.md)
      ![image](https://user-images.githubusercontent.com/43905023/127650948-b8ef7cc8-8c40-49b2-b374-dba90cc2844a.png)
 
-4) [Documents](https://github.com/WeijianZong/MINI2P_toolbox/tree/main/Documents)
+4) [Documents](Documents)
+
+    a) [Requirements](Documents/requirements.md): A list of the non-optical components necessary to build and use a MINI2P system, including licencsed software requirements. 
+    
+    b) [Bill of Materials](Documents/bill-of-materials.docx): A list of the the components (by source and part name) to build the optical system.
+    
+    c) [How-to](Documents/readme.md): A set of more detailed how-to documentation about how some components of the system work. 
 
 
 ## Usage:
 
-  Applications NATEX, StitchingChecker and DistortionCleaner were written with Matlab app designer. In order to use these softwares, please press "open” in the home toolstrip of Matlab, select the software, wait until the app designer interface pops out, and then press "run". The details about how to use these codes and softwares are in wiki pages of this repository.
+  Applications NATEX, StitchingChecker and DistortionCleaner were written with Matlab app designer. In order to use these software, please press "open” in the home toolstrip of Matlab, select the software, wait until the app designer interface pops out, and then press "run". Some details in how to use each application is provided under [Documents](Documents/readme.md)
 
 
 ## Credits: 
 
-The codes were mainly written by Weijian Zong (weijian.zong@ntnu.no) in [Moser lab](https://www.ntnu.edu/kavli/moser-group#/view/about) at Kavli Institute for Systems Neuroscience, but got inputs and test from all authors in the paper Zong, et al.,"Large-scale two-photon calcium imaging in freely moving mice (2021)". Sections of the analysis code are based on the [Behavioural Neurology Toolbox], (c) Vadim Frolov 2018.
+The codes were mainly written by Weijian Zong (weijian.zong@ntnu.no) in [Moser lab](https://www.ntnu.edu/kavli/moser-group#/view/about) at Kavli Institute for Systems Neuroscience, but got inputs and test from all authors in the paper Zong, et al.,"Large-scale two-photon calcium imaging in freely moving mice (2021)". Sections of the analysis code are based on the [Behavioural Neurology Toolbox](https://bitbucket.org/cnc-ntnu/bnt), (c) Vadim Frolov 2018.
 
 MINI2P is a complete open-source project, we encourage people use, test, modify and further develop this toolbox. If you have any question or suggestion, or find any bugs in the codes, please contact us! If you use the code or data, please cite us!
-
