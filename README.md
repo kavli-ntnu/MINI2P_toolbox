@@ -10,26 +10,25 @@ MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for
 
 ## Contents: 
 
-1) [Hardware](https://github.com/kavli-ntnu/MINI2P_toolbox/tree/main/Hardware)
+1) [Hardware](Hardware)
 
-      [3D models (and 2D drawings for custom components)](Hardware/MINI2P_2021-07-12) of all components for bulding a complete MINI2P system.
+      [3D models (and 2D drawings for custom components)](Hardware) of all components for bulding a complete MINI2P system.
 ![image](https://user-images.githubusercontent.com/43905023/127703645-a6ea03ea-c1aa-4eaa-a9fd-1e6e75a082ed.png)
 
 
 
 2) [Software](Software) 
       
-      a) Two scanimage Machine Data Files (MDF). One is for [2000Hz MEMS-L scanner](Software/SI%20settings/Machine_Data_File_2000Hz.m) and the other is for 5600Hz MEMS-F scanner;
+      a) One scanimage Machine Data File (MDF) for [2000Hz MEMS-L scanner](Software/SI%20settings/Machine_Data_File_2000Hz.m). A second file for  5600Hz MEMS-F scanner will arrive in due course TODO
       
-      b) An example [Suite2P settings](https://github.com/WeijianZong/MINI2P_toolbox/blob/main/Software/Suite2P%20options/GCaMP6S_P2_C1_7.25Hz_MEC.npy).
+      b) An example [Suite2P settings](Software/Suite2P%20options/GCaMP6S_P2_C1_7.25Hz_MEC.npy).
       
-      c) Three DLC model configuration files: [
+      c) Two DLC model configuration files: [
       * [DLC1](Software/DLC%20model%20options/DLC1.yaml),
-      * [DLC2](Software/DLC%20model%20options/DLC2.yaml),
-      * [DLC3](Software/DLC%20model%20options/DLC3.yaml)
+      * [DLC2](Software/DLC%20model%20options/DLC2.yaml)
       More details in [Documents](Documents/DeepLabCut-trained-Models.md).
       
-      d) [AnimalTracker.vi](Software/AnimalTracker): a Labview pragram for recording animal behaviors and synchronizing the tracking camera recording with the MINI2P imaging. More details in [Documents](Documents/AnimalTracker.vi.md)
+      d) [AnimalTracker.vi](Software/AnimalTracker): a Labview program for recording animal behaviors and synchronizing the tracking camera recording with the MINI2P imaging. More details in [Documents](Documents/AnimalTracker.vi.md)
 
 3) [Analysis](Analysis)
 
