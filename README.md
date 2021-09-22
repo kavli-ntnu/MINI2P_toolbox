@@ -39,11 +39,11 @@ MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for
 
       c) [StitchingChecker.mlapp](https://github.com/WeijianZong/MINI2P_toolbox/tree/main/Analysis/Applications/StitchingChecker): an application to stitch multiple FOV recorded from different positions of the cortext. It can load in wide-field image as a reference for FOV alignment and can also take the retinotopic mapping result in for identifying different visual cortices. The precise alginment of FOVs is confirmed by 
       
-        i) overlapping of the landmarks between FOVs and the wide-field image, or between neighbouring FOVS; 
+      * overlapping of the landmarks between FOVs and the wide-field image, or between neighbouring FOVS; 
         
-        ii) peak cross-correlation between FOVs and the wide-field image, or between neighbouring FOVs;
+      * peak cross-correlation between FOVs and the wide-field image, or between neighbouring FOVs;
         
-        iii) overlapping of the repeated cells in neighbouring FOVS. We also found this application can be used to register imagings recorded in multiple days. 
+      * overlapping of the repeated cells in neighbouring FOVS. We also found this application can be used to register imagings recorded in multiple days. 
           
       More details in [Wiki page](https://github.com/WeijianZong/MINI2P_toolbox/wiki/StitchingChecker.mlapp)
      ![image](https://github.com/WeijianZong/MINI2P_toolbox/blob/effa456578ddc0eb99795abb82c57117ab69400c/Analysis/Applications/StitchingChecker/StitchingChecker%20operation_overview.gif)
