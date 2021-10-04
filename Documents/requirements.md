@@ -20,13 +20,6 @@ Post-recording imaging analysis via Suite2P and DeepLabCut is more demanding. Po
 * Minimum 4GB RAM per CPU core, recommended 8GB.
 * Minimum 4 cores. 
 
-### Custom components
-
-The microscope and head stage use numerous custom-fabricated components. Each part is provided in three formats:
-* `.step` : standard 3D exchange format, readable by AutoCAD, Inventor, SolidWorks, etc
-* `.dwg` : 2D drawings of each part manipulable as above
-* `.pdf` : 2D drawings of each part that can be exchanged with users who do not have access to specialised 3D design software. 
-
 
 
 ## Software
