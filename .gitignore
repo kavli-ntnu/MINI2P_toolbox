@@ -1,3 +1,14 @@
 
+# macOS
+.DS_Store
+
+# windows
+thumbs.db
+
+# Misc temp files
+~$*
+
+
+# Specific data files
 Analysis/Applications/StitchingChecker/Example/Stitchingdata.mat
 Analysis/Applications/StitchingChecker/Example/Stitchingdata_20210818.mat
