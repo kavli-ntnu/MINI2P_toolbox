@@ -26,7 +26,7 @@ To start-up, open the Virtual instrument application (.vi file) entitled "Animal
 
 ## GUI:
 ![Schematic of Animal Tracker GUI overview]
-(https://github.com/WeijianZong/MINI2P_toolbox/blob/4fa79b5127ac8cab35dac7b8acf60d82712abaea/Software/AnimalTracker/AnimalTracker-overview.png)
+(https://github.com/kavli-ntnu/MINI2P_toolbox/blob/4a45033ba603d2f39251690c86131b548938de0d/Software/AnimalTracker/AnimalTracker-overview.png)
 
 ## Usage:
 ### change the default frame size, frame rate, exposure time and gain
