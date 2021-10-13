@@ -27,6 +27,7 @@ To start-up, open the Virtual instrument application (.vi file) entitled "Animal
 ## GUI:
 ![Schematic of Animal Tracker GUI overview]
 (https://github.com/WeijianZong/MINI2P_toolbox/blob/4fa79b5127ac8cab35dac7b8acf60d82712abaea/Software/AnimalTracker/AnimalTracker-overview.png)
+
 ## Usage:
 ### change the default frame size, frame rate, exposure time and gain
 1. On the same Directory where the imaging files are going to be saved, create an empty text file (in this case, "1.txt"). 
