@@ -25,9 +25,9 @@ MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for
 
     c) P3–Miniscope assembly protocol. How to assemble a MINI2P microscope is described in this protocol. Assembly tutorial video can be found on the link: https://youtu.be/I0aYfi8GrIc.  Protocol document will be provided soon.
 
-    d) P4–System operation manual. This section includes guidance for software installation, and imaging with MINI2P system. Protocol document will be provided soon.
+    d) P4–System operation manual. This section includes guidance for software installation, and imaging with MINI2P system. This protocol document will be provided soon.
 
-    e) P5–System performance test protocol. This section illustrates how to calibrate and characterize the MINI2P system. Protocol S5 will be provided soon.
+    e) P5–System performance test protocol. This section illustrates how to calibrate and characterize the MINI2P system. This protocol document will be provided soon.
 
 3) [Software](Software) 
       
