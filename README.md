@@ -60,6 +60,7 @@ MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for
     c) [How-to](Documents/readme.md): A set of more detailed how-to documentation about how some components of the system work. 
 
 5) [Protocols](Protocols)
+
     a) P1–Shopping and Machining list 
 This document lists each essential component with the supplier, the product name, the model (or item reference) and its approximate price in Euro. 2D Drawings and 3D models of most components are available on Github (https://github.com/kavli-ntnu/MINI2P_toolbox/tree/main/Hardware) .
 
