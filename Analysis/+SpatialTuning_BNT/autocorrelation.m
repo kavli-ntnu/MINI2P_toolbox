@@ -26,7 +26,7 @@ function Rxx = autocorrelation(map)
         Rxx = zeros(newSizeV, newSizeH);
         return;
     end
-    Rxx = normxcorr2_general(map, map);
+    Rxx = SpatialTuning_BNT.normxcorr2_general(map, map);
 
     offsetV = size(Rxx, 1) -  newSizeV;
     offsetV = round(offsetV/2 + 1);

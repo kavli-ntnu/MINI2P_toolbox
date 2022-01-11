@@ -60,11 +60,11 @@ function tcStat = tcStatistics(turningCurve, binWidth, percentile)
 
     if size(turningCurve, 2) > 1
         % we have mapAxis
-        mapAxis = circ_ang2rad(turningCurve(:, 1));
+        mapAxis = CircStat2012a.circ_ang2rad(turningCurve(:, 1));
         turningCurve = turningCurve(:, 2);
     else
         numBins = length(turningCurve);
-        binWidth = circ_ang2rad(ceil(360 / numBins));
+        binWidth = CircStat2012a.circ_ang2rad(ceil(360 / numBins));
         halfBin = binWidth / 2;
 
         mapAxis = halfBin:binWidth:(numBins*binWidth)-halfBin;
@@ -85,8 +85,8 @@ function tcStat = tcStatistics(turningCurve, binWidth, percentile)
         return;
     end
 
-    tcStat.mean = mod(circ_rad2ang(circ_mean(mapAxis, turningCurve)), 360);
-    tcStat.r = circ_r(mapAxis, turningCurve);
+    tcStat.mean = mod(CircStat2012a.circ_rad2ang(CircStat2012a.circ_mean(mapAxis, turningCurve)), 360);
+    tcStat.r = CircStat2012a.circ_r(mapAxis, turningCurve);
     tcStat.std = sqrt(2 * (1 - tcStat.r)); % Eq. 26.20 from J. H. Zar
 
     [globalPeak, globalPeakInd] = nanmax(turningCurve);
@@ -127,5 +127,5 @@ function tcStat = tcStatistics(turningCurve, binWidth, percentile)
 
     tcStat.peakRate = globalPeak;
     tcStat.meanRate = nanmean(turningCurve);
-    tcStat.peakDirection = circ_rad2ang(mapAxis(globalPeakInd));
+    tcStat.peakDirection = CircStat2012a.circ_rad2ang(mapAxis(globalPeakInd));
 end

@@ -15,9 +15,21 @@ MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for
       [3D models (and 2D drawings for custom components)](Hardware) of all components for bulding a complete MINI2P system.
 ![image](https://user-images.githubusercontent.com/43905023/127703645-a6ea03ea-c1aa-4eaa-a9fd-1e6e75a082ed.png)
 
+2) [Protocols](Protocols)
 
+    a) P1–Shopping and Machining list. This document lists each essential component with the supplier, the product name, the model (or item reference) and its approximate price in Euro. 2D Drawings and 3D models of most components are available on Github (https://github.com/kavli-ntnu/MINI2P_toolbox/tree/main/Hardware) .
 
-2) [Software](Software) 
+    b) P2-System building protocol. This protocol includes all steps to assemble a MINI2P system. Each Protocol starts with a short-list of main reagents and tools needed, followed by an overview schematic of the module, and  a table with the main products.
+       HC-920 assembly building video tutorial can be found on the link: TBD.
+       Laser coupling video tutorial can be found on the link: TBD
+
+    c) P3–Miniscope assembly protocol. How to assemble a MINI2P microscope is described in this protocol. Assembly tutorial video can be found on the link: https://youtu.be/I0aYfi8GrIc.  Protocol document will be provided soon.
+
+    d) P4–System operation manual. This section includes guidance for software installation, and imaging with MINI2P system. This protocol document will be provided soon.
+
+    e) P5–System performance test protocol. This section illustrates how to calibrate and characterize the MINI2P system. This protocol document will be provided soon.
+
+3) [Software](Software) 
       
       a) One scanimage Machine Data File (MDF) for [2000Hz MEMS-L scanner](Software/SI%20settings/Machine_Data_File_2000Hz.m). A second file for  5600Hz MEMS-F scanner will arrive in due course TODO
       
@@ -30,7 +42,7 @@ MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for
       
       d) [AnimalTracker.vi](Software/AnimalTracker): a Labview program for recording animal behaviors and synchronizing the tracking camera recording with the MINI2P imaging. More details in [Documents](Documents/AnimalTracker.vi.md)
 
-3) [Analysis](Analysis)
+4) [Analysis](Analysis)
 
       a) [Pipelines](/Analysis/Pipeline) for spatial tuning analysis included in the paper (grid cells, place cells,etc).
 
@@ -51,7 +63,7 @@ MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for
      d) [DistortionCleaner.mlapp](Analysis/Applications/DistortionCleaner)： an application to elimiate the scanning distortion of MINI2P imaging, calibrate FOV and pixel size, and generate transform matrix. More details in [Documents](Documents/DistortionCleaner.mlapp.md)
      ![image](https://user-images.githubusercontent.com/43905023/127650948-b8ef7cc8-8c40-49b2-b374-dba90cc2844a.png)
 
-4) [Documents](Documents)
+5) [Documents](Documents)
 
     a) [Requirements](Documents/requirements.md): A list of the non-optical components necessary to build and use a MINI2P system, including licencsed software requirements. 
     
@@ -60,6 +72,8 @@ MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for
     c) [How-to](Documents/readme.md): A set of more detailed how-to documentation about how some components of the system work. 
 
 
+
+   
 ## Usage:
 
   Applications NATEX, StitchingChecker and DistortionCleaner were written with Matlab app designer. In order to use these software, please press "open” in the home toolstrip of Matlab, select the software, wait until the app designer interface pops out, and then press "run". Some details in how to use each application is provided under [Documents](Documents/readme.md)
@@ -67,6 +81,6 @@ MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for
 
 ## Credits: 
 
-This repositoriy is created abd maintained by Simon Ball (simon.ball@ntnu.no) and Marina Rodrigues Jorge (marina.jorge@ntnu.no) in [Moser lab](https://www.ntnu.edu/kavli/moser-group#/view/about) at Kavli Institute for Systems Neuroscience, but got inputs and test from all authors in the paper Zong, et al.,"Large-scale two-photon calcium imaging in freely moving mice (2021)". Sections of the analysis code are based on the [Behavioural Neurology Toolbox](https://bitbucket.org/cnc-ntnu/bnt), (c) Vadim Frolov 2018.
+This repositoriy is created and maintained by Simon Ball (simon.ball@ntnu.no) and Marina Rodrigues Jorge (marina.jorge@ntnu.no) in [Moser lab](https://www.ntnu.edu/kavli/moser-group#/view/about) at Kavli Institute for Systems Neuroscience, but got inputs and test from all authors in the paper Zong, et al.,"Large-scale two-photon calcium imaging in freely moving mice (2021)". Sections of the analysis code are based on the [Behavioural Neurology Toolbox](https://bitbucket.org/cnc-ntnu/bnt), (c) Vadim Frolov 2018.
 
 MINI2P is a complete open-source project, we encourage people use, test, modify and further develop this toolbox. If you have any question or suggestion, or find any bugs in the codes, please contact us! If you use the code or data, please cite us!
