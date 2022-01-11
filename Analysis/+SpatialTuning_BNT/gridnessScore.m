@@ -202,7 +202,7 @@ function [gscore, varargout] = gridnessScore(aCorr, varargin)
     centresOfMass(zeroInd, :) = [];
 
     % filter fields that have similar orientation
-    orientDistSq = circ_dist2(orientation);
+    orientDistSq = CircStat2012a.circ_dist2(orientation);
     closeFields = abs(orientDistSq) < deg2rad(minOrientation);
     [rows, cols] = size(closeFields);
     closeFields(1:(rows+1):rows*cols) = 0; % assign zero to diagonal elements
@@ -307,7 +307,7 @@ function cFieldRadius = findCentreRadius(aCorr, half_width, half_height)
 
     % Search for fields only around the centre
     peakCoords = [half_width, half_height];
-    [~, fields] = analyses.placefieldAdaptive(aCorr, 'minPeak', 0, 'minBins', 2, ...
+    [~, fields] = SpatialTuning_BNT.placefieldAdaptive(aCorr, 'minPeak', 0, 'minBins', 2, ...
         'peakCoords', peakCoords);
     if isempty(fields)
         return;
