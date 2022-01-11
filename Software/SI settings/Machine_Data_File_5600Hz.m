@@ -16,14 +16,11 @@ fieldCurvatureRxs = [];     % Field curvature for mesoscope
 fieldCurvatureRys = [];     % Field curvature for mesoscope
 useJsonHeaderFormat = false;     % Use JSON format for TIFF file header
 
-fieldCurvatureTip = 0;
-fieldCurvatureTilt = 0;
-
 %% scanimage.components.Motors (SI Motors)
 % SI Stage/Motor Component.
 motorXYZ = {'ScopeHolder' 'ScopeHolder' 'ScopeHolder'};     % Defines the motor for ScanImage axes X Y Z.
-motorAxisXYZ = [2 1 3];     % Defines the motor axis used for Scanimage axes X Y Z.
-scaleXYZ = [1 -1 1];     % Defines scaling factors for axes.
+motorAxisXYZ = [1 3 2];     % Defines the motor axis used for Scanimage axes X Y Z.
+scaleXYZ = [-1 -1 -1];     % Defines scaling factors for axes.
 backlashCompensation = [0 0 0];     % Backlash compensation in um (positive or negative)
 
 %% scanimage.components.scan2d.RggScan (MINI2P_001)
@@ -31,12 +28,12 @@ backlashCompensation = [0 0 0];     % Backlash compensation in um (positive or n
 acquisitionDeviceId = 'vDAQ0';     % RDI Device ID
 acquisitionEngineIdx = 1;
 
-resonantScanner = 'MEMS2000Hz';     % Name of the resonant scanner
+resonantScanner = 'MEMS5600Hz';     % Name of the resonant scanner
 xGalvo = '';     % Name of the x galvo scanner
-yGalvo = 'MEMS2000Hz_slowaxis';     % Name of the y galvo scanner
+yGalvo = 'MEMS5600Hz_slowaxis';     % Name of the y galvo scanner
 beams = {'920nm AOM'};     % beam device names
 fastZs = {'TLens'};     % fastZ device names
-shutters = {'Laser' 'MEMS' 'PMT' 'LED'};     % shutter device names
+shutters = {'Laser' 'MEMS' 'PMT'};     % shutter device names
 
 channelsInvert = [true true false false];     % Logical: Specifies if the input signal is inverted (i.e., more negative for increased light signal)
 keepResonantScannerOn = false;     % Always keep resonant scanner on to avoid drift and settling time issues
@@ -90,31 +87,6 @@ scannerToRefTransform = [1 0 0;0 1 0;0 0 1];
 virtualChannelSettings = [];
 LaserTriggerDebounceTicks = 1;
 
-enableHostPixelCorrection = false;
-hostPixelCorrectionMultiplier = 500;
-
-%% dabs.mirrorcle.ResonantAxis (MEMS2000Hz)
-hAOZoom = '/vDAQ0/AO1';     % Analog output channel to be used to control resonant axis of the mirror e.g. '/vDAQ0/AO0'
-hDOSync = '/vDAQ0/D1.7';     % String identifying the digital output for the sync signal e.g. '/vDAQ0/D0.1
-hDOFilterX = '/vDAQ0/D3.2';     % String identifying the digital output for the X filter clock e.g. '/vDAQ0/D0.2
-hDOFilterY = '/vDAQ0/D3.1';     % String identifying the digital output for the Y filter clock e.g. '/vDAQ0/D0.3
-
-inputVoltageRange_Vpp = 8;     % Max input voltage range of the controller
-angularRange_deg = 16;     % Max angular range of the device
-
-% Default scan settings
-syncPhase_deg = 100;
-rampTime_s = 0;
-xFilterClockFreq_Hz = 300000;
-yFilterClockFreq_Hz = 150000;
-xFilterClockEnable = 1;
-yFilterClockEnable = 1;
-nominalFrequency_Hz = 2000;
-
-% Calibration Settings
-amplitudeToLinePhaseMap = [4 -2.912e-06;4.5 -3.144e-06;5 -3.056e-06;5.333 -3.48e-06;5.714 -2.56e-06;6 -3.432e-06;6.154 -3.48e-06;6.667 -3.352e-06;7.273 -5.7912e-05;7.5 -3.416e-06;7.692 -3.504e-06;7.727 -3.416e-06;7.72727 0;8 -3.512e-06;8.182 6.3208e-05;8.333 -3.472e-06;8.5 -3.728e-06;8.636 -3.48e-06;9 -3.576e-06;9.091 -3.48e-06;9.5 -3.576e-06;10 0.00011808;11 -3.072e-06];     % translates an amplitude (degrees) to a line phase (seconds)
-amplitudeLUT = zeros(0,2);     % translates a nominal amplitude (degrees) to an output amplitude (degrees)
-
 %% dabs.generic.DigitalShutter (Laser)
 DOControl = '/vDAQ0/D0.0';     % control terminal  e.g. '/vDAQ0/DIO0'
 invertOutput = false;     % invert output drive signal to shutter
@@ -146,8 +118,8 @@ calibrationOpenShutters = {};     % List of shutters to open during the calibrat
 powerFractionLimit = 1;     % Maximum allowed power fraction (between 0 and 1)
 
 % Calibration data
-powerFraction2ModulationVoltLut = [0 0;0.0157 0.2;0.0541 0.4;0.1165 0.6;0.2009 0.8;0.3047 1;0.4247 1.2;0.5583 1.4;0.7005 1.6;0.8493 1.8;1 2];
-powerFraction2PowerWattLut = [0 0;1 164.6];
+powerFraction2ModulationVoltLut = [0 0;0.0135 0.2;0.0523 0.4;0.1139 0.6;0.1975 0.8;0.3013 1;0.4219 1.2;0.5544 1.4;0.6979 1.6;0.8481 1.8;1 2];
+powerFraction2PowerWattLut = [0 0;1 118];
 powerFraction2FeedbackVoltLut = zeros(0,2);
 feedbackOffset_V = 0;
 
@@ -177,28 +149,48 @@ AIFeedback = '';     % feedback terminal e.g. '/vDAQ0/AI0'
 FrameClockIn = '';     % frame clock input terminal e.g. '/Dev1/PFI0'
 
 parkPositionUm = 0;     % park position in micron
-travelRangeUm = [-250 10];     % travel range in micron
+travelRangeUm = [-250 0];     % travel range in micron
 
 voltsPerUm = -0.032;     % volts per micron
 voltsOffset = 0;     % volts that sets actuator to zero position
 
-% Calibration Data for uTLens
-positionLUT = [-240 -267.5;-230 -250.625;-220 -233.75;-210 -217.5;-200 -205;-190 -191.25;-180 -180;-170 -168.958;-160 -159.167;-150 -150;-140 -139.375;-130 -130;-120 -121.25;-110 -113.542;-100 -104.583;-90 -96.25;-80 -86.875;-70 -80;-60 -71.925;-50 -65;-40 -56.2;-30 -46.2;-20 -34.95;-10 -21.2;0 0;10 25];     % Position LUT
+% Calibration Data
+positionLUT = [-240 -267.5;-230 -240;-220 -220;-210 -202.5;-200 -190;-190 -179.375;-180 -170;-170 -160.417;-160 -149.583;-150 -138.75;-140 -130;-130 -122.5;-120 -115;-110 -105.208;-100 -97.9167;-90 -90;-80 -82.5;-70 -73.75;-60 -65.625;-50 -57.5;-40 -50;-30 -40;-20 -30;-10 -16.25;0 0];     % Position LUT
 feedbackVoltLUT = zeros(0,2);     % [Nx2] lut translating feedback volts into position volts
 
-%% dabs.generic.GalvoPureAnalog (MEMS2000Hz_slowaxis)
+%% dabs.mirrorcle.ResonantAxis (MEMS5600Hz)
+hAOZoom = '/vDAQ0/AO1';     % Analog output channel to be used to control resonant axis of the mirror e.g. '/vDAQ0/AO0'
+hDOSync = '/vDAQ0/D1.7';     % String identifying the digital output for the sync signal e.g. '/vDAQ0/D0.1
+hDOFilterX = '/vDAQ0/D3.2';     % String identifying the digital output for the X filter clock e.g. '/vDAQ0/D0.2
+hDOFilterY = '/vDAQ0/D3.1';     % String identifying the digital output for the Y filter clock e.g. '/vDAQ0/D0.3
+
+inputVoltageRange_Vpp = 10;     % Max input voltage range of the controller
+angularRange_deg = 12;     % Max angular range of the device
+
+% Default scan settings
+syncPhase_deg = 100;
+rampTime_s = 0;
+xFilterClockFreq_Hz = 800000;
+yFilterClockFreq_Hz = 300000;
+xFilterClockEnable = 1;
+yFilterClockEnable = 1;
+nominalFrequency_Hz = 5600;
+
+% Calibration Settings
+amplitudeToLinePhaseMap = [3 4.088e-06;6 4.24e-06;8 4.296e-06;10 4.472e-06;10.385 4.44e-06;11.25 5.064e-06;11.5 5.52e-06;12 5.528e-06;12.273 5.488e-06;13 5.536e-06;13.5 5.536e-06];     % translates an amplitude (degrees) to a line phase (seconds)
+amplitudeLUT = zeros(0,2);     % translates a nominal amplitude (degrees) to an output amplitude (degrees)
+
+%% dabs.generic.GalvoPureAnalog (MEMS5600Hz_slowaxis)
 AOControl = '/vDAQ0/AO0';     % control terminal  e.g. '/vDAQ0/AO0'
 AOOffset = '';     % control terminal  e.g. '/vDAQ0/AO0'
 AIFeedback = '';     % feedback terminal e.g. '/vDAQ0/AI0'
 
-angularRange = 6;     % total angular range in optical degrees (e.g. for a galvo with -20..+20 optical degrees, enter 40)
-voltsPerOpticalDegrees = 1.3;     % volts per optical degrees for the control signal
+angularRange = 12;     % total angular range in optical degrees (e.g. for a galvo with -20..+20 optical degrees, enter 40)
+voltsPerOpticalDegrees = 1;     % volts per optical degrees for the control signal
 parkPosition = 0;     % park position in optical degrees
 slewRateLimit = Inf;     % Slew rate limit of the analog output in Volts per second
 
 % Calibration settings
 feedbackVoltLUT = zeros(0,2);     % [Nx2] lut translating feedback volts into position volts
 offsetVoltScaling = 1;     % scalar factor for offset volts
-
-voltsOffset = -0.3;
 

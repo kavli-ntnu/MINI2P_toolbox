@@ -1,0 +1,31 @@
+{
+	"beamModulatorName": "920nm AOM",
+	"powerFraction2ModulationVoltLut": {
+		"_ArrayType_": "double",
+		"_ArraySize_": [11,2],
+		"_ArrayData_": [0,0;
+				0.0157,0.2;
+				0.0541,0.4;
+				0.1165,0.6;
+				0.2009,0.8;
+				0.3047,1.0;
+				0.4247,1.2;
+				0.5583,1.4;
+				0.7005,1.6;
+				0.8493,1.8;
+				1.00,2;]
+	},
+	"powerFraction2PowerWattLut": {
+		"_ArrayType_": "double",
+		"_ArraySize_": [2,2],
+		"_ArrayData_": [0,0;
+				1,164.6]
+	},
+	"powerFraction2FeedbackVoltLut": {
+		"_ArrayType_": "double",
+		"_ArraySize_": [0,2],
+		"_ArrayData_": null
+	},
+	"feedbackOffset_V": 0
+}
+
