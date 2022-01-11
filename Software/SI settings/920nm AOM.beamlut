@@ -29,3 +29,7 @@
 	"feedbackOffset_V": 0
 }
 
+%powerFraction2ModulationVoltLut inholds a look-up-table (LUT) for calibration of the laser Power vs Voltage curve.
+%For a voltage ranging from 0 to 2V, in steps of 0.2V (second column), the output power has been measured after the miniscope with a photodiode sensor.
+% However, the LUT contains the normalized power, not the measured power. The normalized power is then the measured output power divided by the maximum output power at 2V. 
+% (in this case, 164.6 mW at 2V - see "powerFraction2PowerWattLut").

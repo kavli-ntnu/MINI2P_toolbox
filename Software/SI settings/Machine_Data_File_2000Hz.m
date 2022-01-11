@@ -145,7 +145,7 @@ calibrationOpenShutters = {};     % List of shutters to open during the calibrat
 
 powerFractionLimit = 1;     % Maximum allowed power fraction (between 0 and 1)
 
-% Calibration data
+% Calibration data for the laser
 powerFraction2ModulationVoltLut = [0 0;0.0157 0.2;0.0541 0.4;0.1165 0.6;0.2009 0.8;0.3047 1;0.4247 1.2;0.5583 1.4;0.7005 1.6;0.8493 1.8;1 2];
 powerFraction2PowerWattLut = [0 0;1 164.6];
 powerFraction2FeedbackVoltLut = zeros(0,2);
