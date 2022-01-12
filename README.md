@@ -17,13 +17,13 @@ MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for
 
 2) [Protocols](Protocols)
 
-    a) P1–Shopping and Machining list. This document lists each essential component with the supplier, the product name, the model (or item reference) and its approximate price in Euro. 2D Drawings and 3D models of most components are available on Github (https://github.com/kavli-ntnu/MINI2P_toolbox/tree/main/Hardware) .
+    a) [P1–Shopping and Machining list](https://github.com/kavli-ntnu/MINI2P_toolbox/blob/main/Protocols/S1%20-%20Shopping%20%26%20Machining%20List%20.pdf). This document lists each essential component with the supplier, the product name, the model (or item reference) and its approximate price in Euro. 2D Drawings and 3D models of most components are available [here](https://github.com/kavli-ntnu/MINI2P_toolbox/tree/main/Hardware) .
 
     b) P2-System building protocol. This protocol includes all steps to assemble a MINI2P system. Each Protocol starts with a short-list of main reagents and tools needed, followed by an overview schematic of the module, and  a table with the main products.
        HC-920 assembly building video tutorial can be found on the link: TBD.
        Laser coupling video tutorial can be found on the link: TBD
 
-    c) P3–Miniscope assembly protocol. How to assemble a MINI2P microscope is described in this protocol. Assembly tutorial video can be found on the link: https://youtu.be/I0aYfi8GrIc.  Protocol document will be provided soon.
+    c) P3–Miniscope assembly protocol. How to assemble a MINI2P microscope is described in this protocol. Assembly tutorial video can be found on the [link](https://youtu.be/I0aYfi8GrIc).  Protocol document will be provided soon.
 
     d) P4–System operation manual. This section includes guidance for software installation, and imaging with MINI2P system. This protocol document will be provided soon.
 
@@ -31,13 +31,14 @@ MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for
 
 3) [Software](Software) 
       
-      a) One scanimage Machine Data File (MDF) for [2000Hz MEMS-L scanner](Software/SI%20settings/Machine_Data_File_2000Hz.m). A second file for  5600Hz MEMS-F scanner will arrive in due course TODO
+      a) One scanimage Machine Data File (MDF) for [2000Hz MEMS-L scanner](Software/SI%20settings/Machine_Data_File_2000Hz.m). A second file for [5600Hz MEMS-F scanner](https://github.com/kavli-ntnu/MINI2P_toolbox/blob/main/Software/SI%20settings/Machine_Data_File_5600Hz.m)
       
       b) An example [Suite2P settings](Software/Suite2P%20options/GCaMP6S_P2_C1_7.25Hz_MEC.npy).
       
-      c) Two DLC model configuration files: [
+      c) Two DLC model configuration files:
       * [DLC1](Software/DLC%20model%20options/DLC1.yaml),
-      * [DLC2](Software/DLC%20model%20options/DLC2.yaml)
+      * [DLC2](Software/DLC%20model%20options/DLC2.yaml),
+      
       More details in [Documents](Documents/DeepLabCut-trained-Models.md).
       
       d) [AnimalTracker.vi](Software/AnimalTracker): a Labview program for recording animal behaviors and synchronizing the tracking camera recording with the MINI2P imaging. More details in [Documents](Documents/AnimalTracker.vi.md)
