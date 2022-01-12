@@ -31,7 +31,7 @@ MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for
 
 3) [Software](Software) 
       
-      a) One scanimage Machine Data File (MDF) for [2000Hz MEMS-L scanner](Software/SI%20settings/Machine_Data_File_2000Hz.m). A second file for  5600Hz MEMS-F scanner will arrive in due course TODO
+      a) One scanimage Machine Data File (MDF) for [2000Hz MEMS-L scanner](Software/SI%20settings/Machine_Data_File_2000Hz.m). A second file for [5600Hz MEMS-F scanner](https://github.com/kavli-ntnu/MINI2P_toolbox/blob/main/Software/SI%20settings/Machine_Data_File_5600Hz.m)
       
       b) An example [Suite2P settings](Software/Suite2P%20options/GCaMP6S_P2_C1_7.25Hz_MEC.npy).
       
