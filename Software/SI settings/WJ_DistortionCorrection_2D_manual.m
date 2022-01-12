@@ -1,15 +1,15 @@
-function WJ_DistortionCorrection_withoutSychSignal(src,evt,varargin)
+function WJ_DistortionCorrection_2D_manual(src,evt,varargin)
             global filename        
             filename=[src.hSI.hScan2D.logFilePath,'\', src.hSI.hScan2D.logFileStem,'_',num2str(src.hSI.hScan2D.logFileCounter-1,'%05d'),'.tif'];                                   
             disp(['Just saved raw data: ',filename]);
             disp('Start the distortion correction....');
             disp('Reloading the raw data....');
             % read Tranform matrix
-            load('\\forskning.it.ntnu.no\ntnu\mh-kin\moser\MINI2P\FOV callibration\50umGrid_256_TransformMatrix.mat');
+            load('\\forskning.it.ntnu.no\ntnu\mh-kin\moser\MINI2P\FOVcallibration\50umGrid_256_TransformMatrix_2D.mat');
             % read FOV information
-            FOV=csvread('\\forskning.it.ntnu.no\ntnu\mh-kin\moser\MINI2P\FOV callibration\50umGrid-256x256-2000Hz_FOV.csv');
+            FOV=csvread('\\forskning.it.ntnu.no\ntnu\mh-kin\moser\MINI2P\FOVcallibration\50umGrid_256_FOV_2D.csv');
             % Open the .tif recording file desired to apply the distortion correction
-            [header, RawImage, imgInfo] = scanimage.util.opentif('C:\Recordings\Experiment1\256_data.tif');
+            [header, RawImage, imgInfo] = scanimage.util.opentif('C:\Recordings\Experiment1\data_256_2D.tif');
             filename1=imgInfo.filename;
             disp(['Rawe 2P imaging data: "' filename1  '" is loaded']);
             save([filename(1:end-4),'_tifHeader.mat'],'header');% save the SI information, only necessasy for SI information saving. No need for DJ analysis
