@@ -38,7 +38,7 @@ MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for
       c) Two DLC model configuration files:
       * [DLC1](Software/DLC%20model%20options/DLC1.yaml),
       * [DLC2](Software/DLC%20model%20options/DLC2.yaml),
-      * 
+      
       More details in [Documents](Documents/DeepLabCut-trained-Models.md).
       
       d) [AnimalTracker.vi](Software/AnimalTracker): a Labview program for recording animal behaviors and synchronizing the tracking camera recording with the MINI2P imaging. More details in [Documents](Documents/AnimalTracker.vi.md)
