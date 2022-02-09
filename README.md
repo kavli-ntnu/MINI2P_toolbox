@@ -58,7 +58,7 @@ MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for
         
       * overlapping of the repeated cells in neighbouring FOVS. We also found this application can be used to register imagings recorded in multiple days. 
           
-      More details in [Documents](DocumentsStitchingChecker.mlapp.md)
+      More details in [Documents](https://github.com/kavli-ntnu/MINI2P_toolbox/blob/main/Documents/StitchingChecker.mlapp.md)
      ![image](Analysis/Applications/StitchingChecker/StitchingChecker%20operation_overview.gif)
 
      d) [DistortionCleaner.mlapp](Analysis/Applications/DistortionCleaner)： an application to elimiate the scanning distortion of MINI2P imaging, calibrate FOV and pixel size, and generate transform matrix. More details in [Documents](Documents/DistortionCleaner.mlapp.md)
