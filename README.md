@@ -48,7 +48,7 @@ MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for
       a) [Pipelines](/Analysis/Pipeline) for spatial tuning analysis included in the paper (grid cells, place cells,etc).
 
       b) [NATEX.mlapp](/Analysis/Applications/NATEX): Nat Explorer, an application to load, process and preview the neuronal activity data (from the Suite2P output) and the tracking data (from the DLC output). It also combines the neuronal activity data and tracking data into the NAT.mat (Neuron Activity aligned with Tracking Matrix) and put all necessasy information into ExperimentInformation.mat for the user-specific downsteam analysis. More details in [Documents](Documents/NATEX.mlapp.md) 
-      ![image](Analysis/Applications/NATEX/NATEX%20operation_speedup.gif)
+      ![image](https://github.com/kavli-ntnu/MINI2P_toolbox/blob/main/Analysis/Applications/NATEX/pic/NATEX%20operation_speedup.gif)
 
       c) [StitchingChecker.mlapp](Analysis/Applications/StitchingChecker): an application to stitch multiple FOV recorded from different positions of the cortext. It can load in wide-field image as a reference for FOV alignment and can also take the retinotopic mapping result in for identifying different visual cortices. The precise alginment of FOVs is confirmed by 
       
