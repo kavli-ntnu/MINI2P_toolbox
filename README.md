@@ -79,6 +79,6 @@ MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for
 
 ## Credits: 
 
-This repositoriy is created and maintained by Simon Ball (simon.ball@ntnu.no) and Marina Rodrigues Jorge (marina.jorge@ntnu.no) in [Moser lab](https://www.ntnu.edu/kavli/moser-group#/view/about) at Kavli Institute for Systems Neuroscience, but got inputs and test from all authors in the paper Zong, et al.,"Large-scale two-photon calcium imaging in freely moving mice (2021)". Sections of the analysis code are based on the [Behavioural Neurology Toolbox](https://bitbucket.org/cnc-ntnu/bnt), (c) Vadim Frolov 2018.
+This repositoriy is created and maintained by Simon Ball (simon.ball@ntnu.no) and Marina Rodrigues Jorge (marina.jorge@ntnu.no) in [Moser lab](https://www.ntnu.edu/kavli/moser-group#/view/about) at Kavli Institute for Systems Neuroscience, but got inputs and test from all authors in the paper Zong, et al.,"Large-scale two-photon calcium imaging in freely moving mice",_Cell_(2022). Sections of the analysis code are based on the [Behavioural Neurology Toolbox](https://bitbucket.org/cnc-ntnu/bnt), (c) Vadim Frolov 2018.
 
 MINI2P is a complete open-source project, we encourage people use, test, modify and further develop this toolbox. If you have any question or suggestion, or find any bugs in the codes, please contact us! If you use the code or data, please cite us!
