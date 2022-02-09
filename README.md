@@ -67,9 +67,7 @@ MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for
 
     a) [Requirements](Documents/requirements.md): A list of the non-optical components necessary to build and use a MINI2P system, including licencsed software requirements. 
     
-    b) [Bill of Materials](Documents/bill-of-materials.docx): A list of the the components (by source and part name) to build the optical system.
-    
-    c) [How-to](Documents/readme.md): A set of more detailed how-to documentation about how some components of the system work. 
+    b) [How-to](Documents/readme.md): A set of more detailed how-to documentation about how some components of the system work. 
 
 
 
