@@ -22,11 +22,8 @@ MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for
     b) [P2-System building protocol](https://github.com/kavli-ntnu/MINI2P_toolbox/blob/main/Protocols/P2%20-%20System%20building%20protocol%20.pdf). This protocol includes all steps to assemble a MINI2P system. Each Protocol starts with a short-list of main reagents and tools needed, followed by an overview schematic of the module, and  a table with the main products.
        HC-920 assembly building and laser coupling video tutorial can be found on the [link](https://www.youtube.com/watch?v=HjAtoPbDu8E).    
 
-    c) P3–Miniscope assembly protocol. How to assemble a MINI2P microscope is described in this protocol. Assembly tutorial video can be found on the [link](https://youtu.be/I0aYfi8GrIc).  Protocol document will be provided soon.
-
-    d) P4–System operation manual. This section includes guidance for software installation, and imaging with MINI2P system. This protocol document will be provided soon.
-
-    e) P5–System performance test protocol. This section illustrates how to calibrate and characterize the MINI2P system. This protocol document will be provided soon.
+    c) P3–Miniscope assembly protocol. How to assemble a MINI2P microscope is described in this protocol. Assembly tutorial video can be found on the [link](https://youtu.be/I0aYfi8GrIc). 
+   
 
 3) [Software](Software) 
       
