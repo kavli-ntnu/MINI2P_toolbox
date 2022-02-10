@@ -6,7 +6,7 @@ MINI2P freely-moving calcium imaging and spatial tuning analysis
 
 ## Description: 
 
-MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for buidling and using MINI2P to do freely-moving recording. MINI2P is an open-source miniature 2-photon microsocpe for fast high-resolution calcium imaging in freely-moving mice, published in Zong, et al.,"Large-scale two-photon calcium imaging in freely moving mice (2021)". With the materials provided in this toolbox, people can assemble, test the MINI2P system, set up the animal tracking system, process the MINI2P imaging data, extract neuronal activity from single cells, and combine the neuronal activity data and the tracking data together for user-depedent downsteam analysis. The multi-FOV stitching software is also included. The codes for most of the anaylsis (grid cells, place cells, etc) in the paper "Large-scale two-photon calcium imaging in freely moving mice (2021)" are also provided.
+MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for buidling and using MINI2P to do freely-moving recording. MINI2P is an open-source miniature 2-photon microsocpe for fast high-resolution calcium imaging in freely-moving mice, published in Zong, et al.,"Large-scale two-photon calcium imaging in freely moving mice (2022)". With the materials provided in this toolbox, people can assemble, test the MINI2P system, set up the animal tracking system, process the MINI2P imaging data, extract neuronal activity from single cells, and combine the neuronal activity data and the tracking data together for user-depedent downsteam analysis. The multi-FOV stitching software is also included. The codes for most of the anaylsis (grid cells, place cells, etc) in the paper "Large-scale two-photon calcium imaging in freely moving mice (2022)" are also provided.
 
 ## Contents: 
 
@@ -76,6 +76,6 @@ MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for
 
 ## Credits: 
 
-This repositoriy is created and maintained by Simon Ball (simon.ball@ntnu.no) and Marina Rodrigues Jorge (marina.jorge@ntnu.no) in [Moser lab](https://www.ntnu.edu/kavli/moser-group#/view/about) at Kavli Institute for Systems Neuroscience, but got inputs and test from all authors in the paper Zong, et al.,"Large-scale two-photon calcium imaging in freely moving mice",_Cell_(2022). Sections of the analysis code are based on the [Behavioural Neurology Toolbox](https://bitbucket.org/cnc-ntnu/bnt), (c) Vadim Frolov 2018.
+This repository was created by Weijian Zong and maintained by the [Moser group](https://www.ntnu.edu/kavli/moser-group#/view/about) at Kavli Institute for Systems Neuroscience. It has benefitted from the inputs of all authors of the paper Zong, et al.,"Large-scale two-photon calcium imaging in freely moving mice," _Cell_(2022). Sections of the analysis code are based on the [Behavioural Neurology Toolbox](https://bitbucket.org/cnc-ntnu/bnt), (c) Vadim Frolov 2018.
 
-MINI2P is a complete open-source project, we encourage people use, test, modify and further develop this toolbox. If you have any question or suggestion, or find any bugs in the codes, please contact us! If you use the code or data, please cite us!
+MINI2P is a complete open-source project, we encourage people to use, test, modify and further develop this toolbox. If you have any questions or suggestions, or find any bugs in the codes, please contact us or submit an issue. If you use the code or data, please cite us!
