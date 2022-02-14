@@ -6,7 +6,7 @@ Substituting alternative, comparable, pieces of hardware is generally possible. 
 
 ### Microscope
 
-A complete bill of materials is provided in `hardware/MINI2P system Version 20210712/materials-list.docx`. Details of specific hardware components of the microscope are discussed in the associated publication:
+A complete bill of materials can be provided upon request. Details of specific hardware components of the microscope are discussed in the associated publication:
 
 > W. Zong *et al*, "Large-scale two-photon calcium imaging in freely moving mice". [BioRXiv (2021)](https://doi.org/10.1101/2021.09.20.461015)
 
