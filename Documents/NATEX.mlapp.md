@@ -27,6 +27,7 @@ The app was written with Matlab 2020a, but should work with any newer version. I
 
 ### Install application
 There are two ways to install the application.
+
 First way is to install the raw codes which gives you the right to modify the function:
 
 Download or clone the whole repository in a local folder. Open Matlab, press "set path” on home toolstrip, then press “add with subfolders...", navagate to the location of \MINI2P_toolbox\MINI2P_toolbox\AnLysis, press "select folder", and finally, "save" the current path.
