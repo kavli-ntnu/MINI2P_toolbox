@@ -28,11 +28,12 @@ The app was written with Matlab 2020a, but should work with any newer version. I
 ### Install application
 There are two ways to install the application.
 First way is to install the raw codes which gives you the right to modify the function:
+
 Download or clone the whole repository in a local folder. Open Matlab, press "set path” on home toolstrip, then press “add with subfolders...", navagate to the location of \MINI2P_toolbox\MINI2P_toolbox\AnLysis, press "select folder", and finally, "save" the current path.
+
 ![Installation](https://github.com/WeijianZong/MINI2P_toolbox/blob/0193fc55e664e86cb0582637ce52052e292067dc/Analysis/Installation.png)
+
 Second way is to install the app into the Matlab toolboxes which makes the most convinient way to call it. But you can not see or change the codes:
-
-
 
 ### Install ScanImage
 In order to read out and save the ScanImage tiff header (the function "Save SI Information"), you need to install ScanImage on the same computer too. The free version will work well. Follow their [instruction](https://vidriotechnologies.com/scanimage/) for installation.
