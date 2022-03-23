@@ -57,7 +57,7 @@ MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for
       More details in [Documents](https://github.com/kavli-ntnu/MINI2P_toolbox/blob/main/Documents/StitchingChecker.mlapp.md)
      ![image](Analysis/Applications/StitchingChecker/StitchingChecker%20operation_overview.gif)
 
-     d) [DistortionCleaner.mlapp](Analysis/Applications/DistortionCleaner)： an application to elimiate the scanning distortion of MINI2P imaging, calibrate FOV and pixel size, and generate transform matrix. More details in [Documents](Documents/DistortionCleaner.mlapp.md)
+     d) [DistortionCleaner.mlapp](Analysis/Applications/DistortionCleaner)： an application to elimiate the scanning distortion of MINI2P imaging, calibrate FOV and pixel size, and generate transform matrix. This program works similar to the ScanImage plugin “MINI2P distortion detecotion", but can work without installing Scanimage. More details in [Documents](Documents/DistortionCleaner.mlapp.md)
      ![image](https://user-images.githubusercontent.com/43905023/127650948-b8ef7cc8-8c40-49b2-b374-dba90cc2844a.png)
 
 5) [Documents](Documents)
