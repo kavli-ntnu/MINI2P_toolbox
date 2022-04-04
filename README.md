@@ -39,7 +39,7 @@ MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for
       
       d) [AnimalTracker.vi](Software/AnimalTracker): a Labview program for recording animal behaviors and synchronizing the tracking camera recording with the MINI2P imaging. More details in [Documents](Documents/AnimalTracker.vi.md)
       
-      e) [MINI2P SI device](https://github.com/kavli-ntnu/MINI2P_toolbox/tree/main/Software/MINI2P%20SI%20Device): Briefly, this device enables users to measure MINI2P distortion in different plane, do the fast data correction, and register MINI2P system information in ScanImage software. And all these information are saved in Tiff header now.  More details in [Readme](https://github.com/kavli-ntnu/MINI2P_toolbox/blob/main/Software/MINI2P%20SI%20Device/Readme_20220322.docx)
+      e) [MINI2P SI device](https://github.com/kavli-ntnu/MINI2P_toolbox/tree/main/Software/MINI2P%20SI%20Device): Briefly, this device enables users to measure MINI2P distortion in different planes, do fast data correction, and register MINI2P system information in ScanImage software. And all this information is saved in Tiff header now.  Video tutorial can be found on the [link](https://youtu.be/DlftmRX5ty0).  More details in [Readme](https://github.com/kavli-ntnu/MINI2P_toolbox/blob/main/Software/MINI2P%20SI%20Device/Readme_20220322.docx)
 
 4) [Analysis](Analysis)
 
