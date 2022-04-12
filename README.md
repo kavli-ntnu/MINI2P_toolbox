@@ -38,6 +38,8 @@ MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for
       More details in [Documents](Documents/DeepLabCut-trained-Models.md).
       
       d) [AnimalTracker.vi](Software/AnimalTracker): a Labview program for recording animal behaviors and synchronizing the tracking camera recording with the MINI2P imaging. More details in [Documents](Documents/AnimalTracker.vi.md)
+      
+      e) [MINI2P SI device](https://github.com/kavli-ntnu/MINI2P_toolbox/tree/main/Software/MINI2P%20SI%20Device): Briefly, this device enables users to measure MINI2P distortion in different planes, do fast data correction, and register MINI2P system information in ScanImage software. And all this information is saved in Tiff header now.  Video tutorial can be found on the [link](https://youtu.be/DlftmRX5ty0).  More details in [Readme](https://github.com/kavli-ntnu/MINI2P_toolbox/blob/main/Software/MINI2P%20SI%20Device/Readme_20220322.docx)
 
 4) [Analysis](Analysis)
 
@@ -57,7 +59,7 @@ MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for
       More details in [Documents](https://github.com/kavli-ntnu/MINI2P_toolbox/blob/main/Documents/StitchingChecker.mlapp.md)
      ![image](Analysis/Applications/StitchingChecker/StitchingChecker%20operation_overview.gif)
 
-     d) [DistortionCleaner.mlapp](Analysis/Applications/DistortionCleaner)： an application to elimiate the scanning distortion of MINI2P imaging, calibrate FOV and pixel size, and generate transform matrix. This program works similar to the ScanImage plugin “MINI2P distortion detecotion", but can work without installing Scanimage. More details in [Documents](Documents/DistortionCleaner.mlapp.md)
+     d) [DistortionCleaner.mlapp](Analysis/Applications/DistortionCleaner)： an application to elimiate the scanning distortion of MINI2P imaging, calibrate FOV and pixel size, and generate transform matrix. This program works similar to the ScanImage plugin “MINI2P distortion detecotion", but can work without installing Scanimage. Note that since the release of MINI2P SI Device in March, 2022, this function is not in use or maintenance any more. Users can still install and try it but we will not provide any support or bug-fix. More details in [Documents](Documents/DistortionCleaner.mlapp.md)
      ![image](https://user-images.githubusercontent.com/43905023/127650948-b8ef7cc8-8c40-49b2-b374-dba90cc2844a.png)
 
 5) [Documents](Documents)

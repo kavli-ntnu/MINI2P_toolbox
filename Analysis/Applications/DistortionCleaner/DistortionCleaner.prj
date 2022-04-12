@@ -1,0 +1,124 @@
+<deployment-project plugin="plugin.apptool" plugin-version="1.0">
+  <configuration build-checksum="975217618" file="C:\MINI2P\MINI2P_toolbox\Analysis\Applications\DistortionCleaner\DistortionCleaner.prj" location="C:\MINI2P\MINI2P_toolbox\Analysis\Applications\DistortionCleaner" name="DistortionCleaner" target="target.mlapps" target-name="Package App">
+    <param.appname>DistortionCleaner</param.appname>
+    <param.authnamewatermark>Weijian Zong</param.authnamewatermark>
+    <param.email>weijian.zong@ntnu.no</param.email>
+    <param.company>Kavli Institute for Systems Neuroscience</param.company>
+    <param.icon />
+    <param.icons />
+    <param.summary />
+    <param.description>An application to elimiate the scanning distortion of MINI2P imaging, calibrate FOV and pixel size, and generate transform matrix.</param.description>
+    <param.screenshot>C:\Users\weijianz\AppData\Local\Temp\tp0bfb9f8a_1e21_44bb_a15f_3d38ef8fe1f6.png</param.screenshot>
+    <param.version>1.0</param.version>
+    <param.products.name />
+    <param.products.id />
+    <param.products.version />
+    <param.platforms>
+      <item>win64</item>
+    </param.platforms>
+    <param.output>${PROJECT_ROOT}</param.output>
+    <param.guid>c4fe8b50-be19-45bb-a997-a029312fe8f1</param.guid>
+    <unset>
+      <param.icon />
+      <param.icons />
+      <param.summary />
+      <param.version />
+      <param.products.name />
+      <param.products.id />
+      <param.products.version />
+      <param.output />
+    </unset>
+    <fileset.main>
+      <file>${PROJECT_ROOT}\DistortionCleaner.mlapp</file>
+    </fileset.main>
+    <fileset.depfun>
+      <file>C:\Program Files\Vidrio\SI2021.0.0_2021-10-06-114206_3baa4b74be\+most\+idioms\dispError.m</file>
+      <file>C:\Program Files\Vidrio\SI2021.0.0_2021-10-06-114206_3baa4b74be\+most\+idioms\warn.m</file>
+      <file>C:\Program Files\Vidrio\SI2021.0.0_2021-10-06-114206_3baa4b74be\+most\+json\loadjson.m</file>
+      <file>C:\Program Files\Vidrio\SI2021.0.0_2021-10-06-114206_3baa4b74be\+most\+json\private\jsonopt.m</file>
+      <file>C:\Program Files\Vidrio\SI2021.0.0_2021-10-06-114206_3baa4b74be\+most\+json\private\mergestruct.m</file>
+      <file>C:\Program Files\Vidrio\SI2021.0.0_2021-10-06-114206_3baa4b74be\+most\+json\private\struct2jdata.m</file>
+      <file>C:\Program Files\Vidrio\SI2021.0.0_2021-10-06-114206_3baa4b74be\+most\+json\private\varargin2struct.m</file>
+      <file>C:\Program Files\Vidrio\SI2021.0.0_2021-10-06-114206_3baa4b74be\+most\+memfunctions\inPlaceTranspose.m</file>
+      <file>C:\Program Files\Vidrio\SI2021.0.0_2021-10-06-114206_3baa4b74be\+most\+memfunctions\inplacewrite.m</file>
+      <file>C:\Program Files\Vidrio\SI2021.0.0_2021-10-06-114206_3baa4b74be\+most\+memfunctions\inplacewrite.mexw64</file>
+      <file>C:\Program Files\Vidrio\SI2021.0.0_2021-10-06-114206_3baa4b74be\+scanimage\+util\+private\decodeHeaderLines.m</file>
+      <file>C:\Program Files\Vidrio\SI2021.0.0_2021-10-06-114206_3baa4b74be\+scanimage\+util\+private\extractHeaderData.m</file>
+      <file>C:\Program Files\Vidrio\SI2021.0.0_2021-10-06-114206_3baa4b74be\+scanimage\+util\+private\getArg.m</file>
+      <file>C:\Program Files\Vidrio\SI2021.0.0_2021-10-06-114206_3baa4b74be\+scanimage\+util\+private\getHeaderData.m</file>
+      <file>C:\Program Files\Vidrio\SI2021.0.0_2021-10-06-114206_3baa4b74be\+scanimage\+util\+private\getSITiffVersionInfo.m</file>
+      <file>C:\Program Files\Vidrio\SI2021.0.0_2021-10-06-114206_3baa4b74be\+scanimage\+util\+private\parseFrameHeaders.m</file>
+      <file>C:\Program Files\Vidrio\SI2021.0.0_2021-10-06-114206_3baa4b74be\+scanimage\+util\+private\selectImages.m</file>
+      <file>C:\Program Files\Vidrio\SI2021.0.0_2021-10-06-114206_3baa4b74be\+scanimage\+util\opentif.m</file>
+      <file>C:\Program Files\Vidrio\SI2021.0.0_2021-10-06-114206_3baa4b74be\+scanimage\+util\private\mexScanImageTiffClose.mexw64</file>
+      <file>C:\Program Files\Vidrio\SI2021.0.0_2021-10-06-114206_3baa4b74be\+scanimage\+util\private\mexScanImageTiffData.mexw64</file>
+      <file>C:\Program Files\Vidrio\SI2021.0.0_2021-10-06-114206_3baa4b74be\+scanimage\+util\private\mexScanImageTiffImageDescriptions.mexw64</file>
+      <file>C:\Program Files\Vidrio\SI2021.0.0_2021-10-06-114206_3baa4b74be\+scanimage\+util\private\mexScanImageTiffMetadata.mexw64</file>
+      <file>C:\Program Files\Vidrio\SI2021.0.0_2021-10-06-114206_3baa4b74be\+scanimage\+util\private\mexScanImageTiffOpen.mexw64</file>
+      <file>C:\Program Files\Vidrio\SI2021.0.0_2021-10-06-114206_3baa4b74be\+scanimage\+util\private\mexScanImageTiffReaderAPIVersion.mexw64</file>
+      <file>C:\Program Files\Vidrio\SI2021.0.0_2021-10-06-114206_3baa4b74be\+scanimage\+util\ScanImageTiffReader.m</file>
+    </fileset.depfun>
+    <fileset.resources />
+    <fileset.package />
+    <build-deliverables>
+      <file location="C:\MINI2P\MINI2P_toolbox\Analysis\Applications" name="DistortionCleaner" optional="false">C:\MINI2P\MINI2P_toolbox\Analysis\Applications\DistortionCleaner</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>C:\Program Files\MATLAB\R2019b</root>
+      <toolboxes>
+        <toolbox name="matlabcoder" />
+        <toolbox name="embeddedcoder" />
+        <toolbox name="gpucoder" />
+        <toolbox name="fixedpoint" />
+        <toolbox name="matlabhdlcoder" />
+        <toolbox name="neuralnetwork" />
+      </toolboxes>
+      <toolbox>
+        <matlabcoder>
+          <enabled>true</enabled>
+        </matlabcoder>
+      </toolbox>
+      <toolbox>
+        <embeddedcoder>
+          <enabled>true</enabled>
+        </embeddedcoder>
+      </toolbox>
+      <toolbox>
+        <gpucoder>
+          <enabled>true</enabled>
+        </gpucoder>
+      </toolbox>
+      <toolbox>
+        <fixedpoint>
+          <enabled>true</enabled>
+        </fixedpoint>
+      </toolbox>
+      <toolbox>
+        <matlabhdlcoder>
+          <enabled>true</enabled>
+        </matlabhdlcoder>
+      </toolbox>
+      <toolbox>
+        <neuralnetwork>
+          <enabled>true</enabled>
+        </neuralnetwork>
+      </toolbox>
+    </matlab>
+    <platform>
+      <unix>false</unix>
+      <mac>false</mac>
+      <windows>true</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>false</linux>
+      <solaris>false</solaris>
+      <osver>10.0</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>win64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>
