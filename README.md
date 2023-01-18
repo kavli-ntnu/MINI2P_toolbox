@@ -22,7 +22,8 @@ MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for
     b) [P2-System building protocol](https://github.com/kavli-ntnu/MINI2P_toolbox/blob/main/Protocols/P2%20-%20System%20building%20protocol%20.pdf). This protocol includes all steps to assemble a MINI2P system. Each Protocol starts with a short-list of main reagents and tools needed, followed by an overview schematic of the module, and  a table with the main products.
        HC-920 assembly building and laser coupling video tutorial can be found on the [link](https://www.youtube.com/watch?v=HjAtoPbDu8E).    
 
-    c) P3–Miniscope assembly protocol. How to assemble a MINI2P microscope is described in this protocol. Assembly tutorial video can be found on the [link](https://youtu.be/I0aYfi8GrIc). 
+    c) P3–Miniscope assembly protocol. How to assemble a MINI2P microscope is described in this protocol.
+[![Assembly tutorial video](http://img.youtube.com/vi/2B0UnX2e5S8/1.jpg)](http://www.youtube.com/watch?v=2B0UnX2e5S8 "Assembly tutorial video") 
    
 
 3) [Software](Software) 
@@ -59,12 +60,12 @@ MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for
       More details in [Documents](https://github.com/kavli-ntnu/MINI2P_toolbox/blob/main/Documents/StitchingChecker.mlapp.md)
      ![image](Analysis/Applications/StitchingChecker/StitchingChecker%20operation_overview.gif)
 
-     d) [DistortionCleaner.mlapp](Analysis/Applications/DistortionCleaner)： an application to elimiate the scanning distortion of MINI2P imaging, calibrate FOV and pixel size, and generate transform matrix. This program works similar to the ScanImage plugin “MINI2P distortion detecotion", but can work without installing Scanimage. Note that since the release of MINI2P SI Device in March, 2022, this function is not in use or maintenance any more. Users can still install and try it but we will not provide any support or bug-fix. More details in [Documents](Documents/DistortionCleaner.mlapp.md)
+     d) [DistortionCleaner.mlapp](Analysis/Applications/DistortionCleaner)： an application to eliminate the scanning distortion of MINI2P imaging, calibrate FOV and pixel size, and generate transform matrix. This program works similar to the ScanImage plugin “MINI2P distortion detecotion", but can work without installing Scanimage. Note that since the release of MINI2P SI Device in March, 2022, this function is not in use or maintenance any more. Users can still install and try it but we will not provide any support or bug-fix. More details in [Documents](Documents/DistortionCleaner.mlapp.md)
      ![image](https://user-images.githubusercontent.com/43905023/127650948-b8ef7cc8-8c40-49b2-b374-dba90cc2844a.png)
 
 5) [Documents](Documents)
 
-    a) [Requirements](Documents/requirements.md): A list of the non-optical components necessary to build and use a MINI2P system, including licencsed software requirements. 
+    a) [Requirements](Documents/requirements.md): A list of the non-optical components necessary to build and use a MINI2P system, including licensed software requirements. 
     
     b) [How-to](Documents/readme.md): A set of more detailed how-to documentation about how some components of the system work. 
 
