@@ -23,7 +23,7 @@ MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for
        HC-920 assembly building and laser coupling video tutorial can be found on the [link](https://www.youtube.com/watch?v=HjAtoPbDu8E).    
 
     c) P3–Miniscope assembly protocol. How to assemble a MINI2P microscope is described in this protocol.
-[![Assembly tutorial video](http://img.youtube.com/vi/2B0UnX2e5S8/1.jpg)](http://www.youtube.com/watch?v=2B0UnX2e5S8 "Assembly tutorial video") 
+[![Assembly tutorial video](http://img.youtube.com/vi/2B0UnX2e5S8/1.jpg)](http://youtube.com/watch?v=2B0UnX2e5S8](https://www.youtube.com/watch?v=2B0UnX2e5S8&list=PLonWNO9SywvJXpIgQEp6jQMSh_jrn_jPU&index=2) "Assembly tutorial video") 
    
 
 3) [Software](Software) 
