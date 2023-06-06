@@ -17,7 +17,7 @@ MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for
 
 2) [Protocols](Protocols)
 
-    a) [P1–Shopping and Machining list](https://github.com/kavli-ntnu/MINI2P_toolbox/blob/960fcab65f2849e5c8f486b81061c7c759f8e879/Protocols/P1%20-%20Shopping%20&%20Machining%20List%20.pdf). This document lists each essential component with the supplier, the product name, the model (or item reference) and its approximate price in Euro. 2D Drawings and 3D models of most components are available [here](https://github.com/kavli-ntnu/MINI2P_toolbox/tree/main/Hardware) .
+    a) [P1–Shopping and Machining list](https://github.com/kavli-ntnu/MINI2P_toolbox/blob/main/Protocols/P1%20-%20Shopping%20%20Machining%20List%20.pdf). This document lists each essential component with the supplier, the product name, the model (or item reference) and its approximate price in Euro. 2D Drawings and 3D models of most components are available [here](https://github.com/kavli-ntnu/MINI2P_toolbox/tree/main/Hardware) .
 
     b) [P2-System building protocol](https://github.com/kavli-ntnu/MINI2P_toolbox/blob/main/Protocols/P2%20-%20System%20building%20protocol%20.pdf). This protocol includes all steps to assemble a MINI2P system. Each Protocol starts with a short-list of main reagents and tools needed, followed by an overview schematic of the module, and  a table with the main products.
        HC-920 assembly building and laser coupling video tutorial can be found on the [link](https://www.youtube.com/watch?v=HjAtoPbDu8E).    
