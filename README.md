@@ -23,10 +23,12 @@ MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for
        HC-920 assembly building and laser coupling video tutorial can be found on the [link](https://www.youtube.com/watch?v=HjAtoPbDu8E).    
 
     c) P3–Miniscope assembly protocol. How to assemble a MINI2P microscope is described in this protocol.
-[![Assembly tutorial video](http://img.youtube.com/vi/2B0UnX2e5S8/1.jpg)](http://www.youtube.com/watch?v=2B0UnX2e5S8 "Assembly tutorial video") 
+[![Assembly tutorial video](http://img.youtube.com/vi/2B0UnX2e5S8/1.jpg)](http://www.youtube.com/watch?v=2B0UnX2e5S8 "Assembly tutorial video")
+
+    d) [GFB Assembly Protocol](https://github.com/kavli-ntnu/MINI2P_toolbox/blob/main/Protocols/GFB%20Assembly%20Protocol%20.pdf). This document describes the protocol for assembling the GRIN-end fiber bundle (GFB), which replaces the tapered fiber bundle (TFB) as the main fiber collecting and relaying the emission signal to the detection module. 
    
 
-3) [Software](Software) 
+4) [Software](Software) 
       
       a) One scanimage Machine Data File (MDF) for [2000Hz MEMS-L scanner](Software/SI%20settings/Machine_Data_File_2000Hz.m). A second file for [5600Hz MEMS-F scanner](https://github.com/kavli-ntnu/MINI2P_toolbox/blob/main/Software/SI%20settings/Machine_Data_File_5600Hz.m)
       
@@ -42,7 +44,7 @@ MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for
       
       e) [MINI2P SI device](https://github.com/kavli-ntnu/MINI2P_toolbox/tree/main/Software/MINI2P%20SI%20Device): Briefly, this device enables users to measure MINI2P distortion in different planes, do fast data correction, and register MINI2P system information in ScanImage software. And all this information is saved in Tiff header now.  Video tutorial can be found on the [link](https://youtu.be/DlftmRX5ty0).  More details in [Readme](https://github.com/kavli-ntnu/MINI2P_toolbox/blob/main/Software/MINI2P%20SI%20Device/Readme_20220322.docx)
 
-4) [Analysis](Analysis)
+5) [Analysis](Analysis)
 
       a) [Pipelines](/Analysis/Pipeline) for spatial tuning analysis included in the paper (grid cells, place cells,etc).
 
@@ -63,7 +65,7 @@ MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for
      d) [DistortionCleaner.mlapp](Analysis/Applications/DistortionCleaner)： an application to eliminate the scanning distortion of MINI2P imaging, calibrate FOV and pixel size, and generate transform matrix. This program works similar to the ScanImage plugin “MINI2P distortion detecotion", but can work without installing Scanimage. Note that since the release of MINI2P SI Device in March, 2022, this function is not in use or maintenance any more. Users can still install and try it but we will not provide any support or bug-fix. More details in [Documents](Documents/DistortionCleaner.mlapp.md)
      ![image](https://user-images.githubusercontent.com/43905023/127650948-b8ef7cc8-8c40-49b2-b374-dba90cc2844a.png)
 
-5) [Documents](Documents)
+6) [Documents](Documents)
 
     a) [Requirements](Documents/requirements.md): A list of the non-optical components necessary to build and use a MINI2P system, including licensed software requirements. 
     
