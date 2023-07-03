@@ -17,7 +17,7 @@ MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for
 
 2) [Protocols](Protocols)
 
-    a) [P1–Shopping and Machining list](https://github.com/kavli-ntnu/MINI2P_toolbox/blob/main/Protocols/P1%20-%20Shopping%20%20Machining%20List%20.pdf). This document lists each essential component with the supplier, the product name, the model (or item reference) and its approximate price in Euro. 2D Drawings and 3D models of most components are available [here](https://github.com/kavli-ntnu/MINI2P_toolbox/tree/main/Hardware) .
+    a) [P1–Shopping and Machining list](https://github.com/kavli-ntnu/MINI2P_toolbox/blob/f123bb4d4f2f6fd875c3539214261601fda34116/Protocols/P1%20-%20Shopping%20%20Machining%20List%20.pdf). This document lists each essential component with the supplier, the product name, the model (or item reference) and its approximate price in Euro. 2D Drawings and 3D models of most components are available [here](https://github.com/kavli-ntnu/MINI2P_toolbox/tree/main/Hardware) .
 
     b) [P2-System building protocol](https://github.com/kavli-ntnu/MINI2P_toolbox/blob/main/Protocols/P2%20-%20System%20building%20protocol%20.pdf). This protocol includes all steps to assemble a MINI2P system. Each Protocol starts with a short-list of main reagents and tools needed, followed by an overview schematic of the module, and  a table with the main products.
        HC-920 assembly building and laser coupling video tutorial can be found on the [link](https://www.youtube.com/watch?v=HjAtoPbDu8E).    
@@ -25,8 +25,13 @@ MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for
     c) P3–Miniscope assembly protocol. How to assemble a MINI2P microscope is described in this protocol.
 [![Assembly tutorial video](http://img.youtube.com/vi/2B0UnX2e5S8/1.jpg)](http://www.youtube.com/watch?v=2B0UnX2e5S8 "Assembly tutorial video")
 
-    d) [GFB Assembly Protocol](https://github.com/kavli-ntnu/MINI2P_toolbox/blob/main/Protocols/GFB%20Assembly%20Protocol%20.pdf). This document describes the protocol for assembling the GRIN-end fiber bundle (GFB), which replaces the tapered fiber bundle (TFB) as the main fiber collecting and relaying the emission signal to the detection module. 
+    d) [GFB Assembly Protocol](https://github.com/kavli-ntnu/MINI2P_toolbox/blob/main/Protocols/GFB%20Assembly%20Protocol%20.pdf). This document describes the protocol for assembling the GRIN-end fiber bundle (GFB), which replaces the tapered fiber bundle (TFB) as the main fiber collecting and relaying the emission signal to the detection module.
    
+   e) MEMS wires and mirror protocol. How to assemble MEMS wires and solder MEMS flex cable.
+   [![MEMS mirror flex cable video tutorial](http://img.youtube.com/vi/ghV1DY1aKAA/1.jpg)](https://www.youtube.com/watch?v=ghV1DY1aKAA&list=PLonWNO9SywvJXpIgQEp6jQMSh_jrn_jPU)
+
+   f) These and other video-tutorials can be found on link:
+   [MINI2P video tutorial package](https://youtube.com/playlist?list=PLonWNO9SywvJXpIgQEp6jQMSh_jrn_jPU)
 
 4) [Software](Software) 
       
