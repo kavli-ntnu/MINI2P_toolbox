@@ -25,8 +25,13 @@ MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for
     c) P3–Miniscope assembly protocol. How to assemble a MINI2P microscope is described in this protocol.
 [![Assembly tutorial video](http://img.youtube.com/vi/2B0UnX2e5S8/1.jpg)](http://www.youtube.com/watch?v=2B0UnX2e5S8 "Assembly tutorial video")
 
-    d) [GFB Assembly Protocol](https://github.com/kavli-ntnu/MINI2P_toolbox/blob/main/Protocols/GFB%20Assembly%20Protocol%20.pdf). This document describes the protocol for assembling the GRIN-end fiber bundle (GFB), which replaces the tapered fiber bundle (TFB) as the main fiber collecting and relaying the emission signal to the detection module. 
+    d) [GFB Assembly Protocol](https://github.com/kavli-ntnu/MINI2P_toolbox/blob/main/Protocols/GFB%20Assembly%20Protocol%20.pdf). This document describes the protocol for assembling the GRIN-end fiber bundle (GFB), which replaces the tapered fiber bundle (TFB) as the main fiber collecting and relaying the emission signal to the detection module.
    
+   e) MEMS wires and mirror protocol. How to assemble MEMS wires and solder MEMS flex cable.
+   [![MEMS mirror flex cable video tutorial](http://img.youtube.com/vi/ghV1DY1aKAA/1.jpg)](https://www.youtube.com/watch?v=ghV1DY1aKAA&list=PLonWNO9SywvJXpIgQEp6jQMSh_jrn_jPU)
+
+   f) These and other video-tutorials can be found on link:
+   [MINI2P video tutorial package](https://youtube.com/playlist?list=PLonWNO9SywvJXpIgQEp6jQMSh_jrn_jPU)
 
 4) [Software](Software) 
       
