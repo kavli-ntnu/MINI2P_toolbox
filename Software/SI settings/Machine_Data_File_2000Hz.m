@@ -3,20 +3,20 @@
 %% scanimage.SI (ScanImage)
 
 % Global microscope properties
-objectiveResolution = 27.5;     % Resolution of the objective in microns/degree of scan angle
+objectiveResolution = 75.082;     % Resolution of the objective in microns/degree of scan angle
 
 % Data file location
 
 % Custom Scripts
-startUpScript = 'ScanImageStartScript';     % Name of script that is executed in workspace 'base' after scanimage initializes
+startUpScript = '';     % Name of script that is executed in workspace 'base' after scanimage initializes
 shutDownScript = '';     % Name of script that is executed in workspace 'base' after scanimage exits
 
-fieldCurvatureZs = [];     % Field curvature for mesoscope
-fieldCurvatureRxs = [];     % Field curvature for mesoscope
-fieldCurvatureRys = [];     % Field curvature for mesoscope
+fieldCurvatureZs = [0 -200];     % Field curvature for mesoscope
+fieldCurvatureRxs = [5000 5000];     % Field curvature for mesoscope
+fieldCurvatureRys = [10000 10000];     % Field curvature for mesoscope
 useJsonHeaderFormat = false;     % Use JSON format for TIFF file header
 
-fieldCurvatureTip = 0;
+fieldCurvatureTip = 5;
 fieldCurvatureTilt = 0;
 
 %% scanimage.components.Motors (SI Motors)
@@ -36,7 +36,7 @@ xGalvo = '';     % Name of the x galvo scanner
 yGalvo = 'MEMS2000Hz_slowaxis';     % Name of the y galvo scanner
 beams = {'920nm AOM'};     % beam device names
 fastZs = {'TLens'};     % fastZ device names
-shutters = {'Laser' 'MEMS' 'PMT' 'LED'};     % shutter device names
+shutters = {'Laser' 'MEMS' 'PMT'};     % shutter device names
 
 channelsInvert = [true true false false];     % Logical: Specifies if the input signal is inverted (i.e., more negative for increased light signal)
 keepResonantScannerOn = false;     % Always keep resonant scanner on to avoid drift and settling time issues
@@ -81,7 +81,7 @@ LaserTriggerPort = '';     % Digital input where laser trigger is connected.
 
 % Trigger Outputs
 frameClockOut = '/vDAQ0/D3.7';     % Output line for the frame clock
-lineClockOut = '';     % Output line for the line clock
+lineClockOut = '/vDAQ0/D0.4';     % Output line for the line clock
 beamModifiedLineClockOut = '';     % Output line for beam clock
 volumeTriggerOut = '';     % Output line for the volume clock
 
@@ -99,20 +99,20 @@ hDOSync = '/vDAQ0/D1.7';     % String identifying the digital output for the syn
 hDOFilterX = '/vDAQ0/D3.2';     % String identifying the digital output for the X filter clock e.g. '/vDAQ0/D0.2
 hDOFilterY = '/vDAQ0/D3.1';     % String identifying the digital output for the Y filter clock e.g. '/vDAQ0/D0.3
 
-inputVoltageRange_Vpp = 8;     % Max input voltage range of the controller
+inputVoltageRange_Vpp = 3.87;     % Max input voltage range of the controller
 angularRange_deg = 16;     % Max angular range of the device
 
 % Default scan settings
-syncPhase_deg = 100;
+syncPhase_deg = 120;
 rampTime_s = 0;
-xFilterClockFreq_Hz = 300000;
-yFilterClockFreq_Hz = 150000;
+xFilterClockFreq_Hz = 250000;
+yFilterClockFreq_Hz = 100000;
 xFilterClockEnable = 1;
 yFilterClockEnable = 1;
 nominalFrequency_Hz = 2000;
 
 % Calibration Settings
-amplitudeToLinePhaseMap = [4 -2.912e-06;4.5 -3.144e-06;5 -3.056e-06;5.333 -3.48e-06;5.714 -2.56e-06;6 -3.432e-06;6.154 -3.48e-06;6.667 -3.352e-06;7.273 -5.7912e-05;7.5 -3.416e-06;7.692 -3.504e-06;7.727 -3.416e-06;7.72727 0;8 -3.512e-06;8.182 6.3208e-05;8.333 -3.472e-06;8.5 -3.728e-06;8.636 -3.48e-06;9 -3.576e-06;9.091 -3.48e-06;9.5 -3.576e-06;10 0.00011808;11 -3.072e-06];     % translates an amplitude (degrees) to a line phase (seconds)
+amplitudeToLinePhaseMap = [0.8 8.4e-07;1.5 -2.664e-06;1.6 8.16e-06;2 -2e-06;3 -3.328e-06;4 -2.608e-06;4.5 -3.144e-06;4.615 -3.56e-06;5 -3.72e-06;5.333 -3.48e-06;5.455 -3.672e-06;5.714 -2.56e-06;6 -3.168e-06;6.154 -3.48e-06;6.667 -3.352e-06;7.273 -5.7912e-05;7.5 -3.416e-06;7.692 -3.504e-06;7.727 -3.416e-06;7.72727 0;8 -4.992e-06;8.182 6.3208e-05;8.333 -3.472e-06;8.5 -3.728e-06;8.636 -3.48e-06;9 -3.576e-06;9.091 -3.48e-06;9.5 -3.576e-06;10 0.00011808;11 -3.072e-06];     % translates an amplitude (degrees) to a line phase (seconds)
 amplitudeLUT = zeros(0,2);     % translates a nominal amplitude (degrees) to an output amplitude (degrees)
 
 %% dabs.generic.DigitalShutter (Laser)
@@ -137,17 +137,17 @@ openTime_s = 0.1;     % settling time for shutter in seconds
 
 %% dabs.generic.BeamModulatorFastAnalog (920nm AOM)
 AOControl = '/vDAQ0/AO2';     % control terminal  e.g. '/vDAQ0/AO0'
-AIFeedback = '';     % feedback terminal e.g. '/vDAQ0/AI0'
+AIFeedback = '/vDAQ0/AI0';     % feedback terminal e.g. '/vDAQ0/AI0'
 
 outputRange_V = [0 2];     % Control output range in Volts
 feedbackUsesRejectedLight = false;     % Indicates if photodiode is in rejected path of beams modulator.
-calibrationOpenShutters = {};     % List of shutters to open during the calibration. (e.g. {'Shutter1' 'Shutter2'}
+calibrationOpenShutters = {'Laser'};     % List of shutters to open during the calibration. (e.g. {'Shutter1' 'Shutter2'}
 
 powerFractionLimit = 1;     % Maximum allowed power fraction (between 0 and 1)
 
-% Calibration data for the laser
-powerFraction2ModulationVoltLut = [0 0;0.0157 0.2;0.0541 0.4;0.1165 0.6;0.2009 0.8;0.3047 1;0.4247 1.2;0.5583 1.4;0.7005 1.6;0.8493 1.8;1 2];
-powerFraction2PowerWattLut = [0 0;1 164.6];
+% Calibration data
+powerFraction2ModulationVoltLut = [0 0;0.014 0.2;0.052 0.4;0.114 0.6;0.204 0.8;0.3013 1;0.4207 1.2;0.5538 1.4;0.6923 1.6;0.8461 1.8;1 2];
+powerFraction2PowerWattLut = [0 0;1 0.169];
 powerFraction2FeedbackVoltLut = zeros(0,2);
 feedbackOffset_V = 0;
 
@@ -156,6 +156,12 @@ modifiedLineClockIn = '';     % Terminal to which external beam trigger is conne
 frameClockIn = '';     % Terminal to which external frame clock is connected. Leave empty for automatic routing via PXI/RTSI bus
 referenceClockIn = '';     % Terminal to which external reference clock is connected. Leave empty for automatic routing via PXI/RTSI bus
 referenceClockRate = 1e+07;     % if referenceClockIn is used, referenceClockRate defines the rate of the reference clock in Hz. Default: 10e6Hz
+
+calibrationNumPoints = 40;
+calibrationNumRepeats = 5;
+calibrationAverageSamples = 5;
+calibrationSettlingTime_s = 0.1;
+calibrationFlybackTime_s = 0.1;
 
 %% dabs.legacy.motor.LegacyMotor (ScopeHolder)
 % Motor used for X/Y/Z motion, including stacks.
@@ -182,8 +188,8 @@ travelRangeUm = [-250 10];     % travel range in micron
 voltsPerUm = -0.032;     % volts per micron
 voltsOffset = 0;     % volts that sets actuator to zero position
 
-% Calibration Data for uTLens
-positionLUT = [-240 -267.5;-230 -250.625;-220 -233.75;-210 -217.5;-200 -205;-190 -191.25;-180 -180;-170 -168.958;-160 -159.167;-150 -150;-140 -139.375;-130 -130;-120 -121.25;-110 -113.542;-100 -104.583;-90 -96.25;-80 -86.875;-70 -80;-60 -71.925;-50 -65;-40 -56.2;-30 -46.2;-20 -34.95;-10 -21.2;0 0;10 25];     % Position LUT
+% Calibration Data
+positionLUT = [-200 -190.9;-185 -176.68;-175 -167.2;-170 -160.12;-150 -142.2;-140 -135.84;-125 -123.7;-115 -116.3;-100 -102.6;-75 -84.1;-50 -65.6;-25 -43.2;-20 -35.34;0 0;10 26.77];     % Position LUT
 feedbackVoltLUT = zeros(0,2);     % [Nx2] lut translating feedback volts into position volts
 
 %% dabs.generic.GalvoPureAnalog (MEMS2000Hz_slowaxis)
@@ -191,8 +197,8 @@ AOControl = '/vDAQ0/AO0';     % control terminal  e.g. '/vDAQ0/AO0'
 AOOffset = '';     % control terminal  e.g. '/vDAQ0/AO0'
 AIFeedback = '';     % feedback terminal e.g. '/vDAQ0/AI0'
 
-angularRange = 6;     % total angular range in optical degrees (e.g. for a galvo with -20..+20 optical degrees, enter 40)
-voltsPerOpticalDegrees = 1.3;     % volts per optical degrees for the control signal
+angularRange = 8;     % total angular range in optical degrees (e.g. for a galvo with -20..+20 optical degrees, enter 40)
+voltsPerOpticalDegrees = -1.1;     % volts per optical degrees for the control signal
 parkPosition = 0;     % park position in optical degrees
 slewRateLimit = Inf;     % Slew rate limit of the analog output in Volts per second
 
@@ -200,5 +206,11 @@ slewRateLimit = Inf;     % Slew rate limit of the analog output in Volts per sec
 feedbackVoltLUT = zeros(0,2);     % [Nx2] lut translating feedback volts into position volts
 offsetVoltScaling = 1;     % scalar factor for offset volts
 
-voltsOffset = -0.3;
+voltsOffset = 0;
+
+%% dabs.mini2p.MINI2P (MINI2P tools)
+transformMatrixDirectory = 'C:\SI settings\2020a\TransformMatrix_mini2p2023_001.mat';     % transform Matrix Directory terminal  e.g. 'C:\Users\'
+system = 'Forrest';     % Name of the system  e.g. 'System_001'
+scope = 'MINI2P_2023_001';     % Name of the scope  e.g. 'MINI2P-L_001'
+objective = 'D0309';     % Type of the objective  e.g. 'D0233'
 

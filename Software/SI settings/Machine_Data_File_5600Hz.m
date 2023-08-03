@@ -3,7 +3,7 @@
 %% scanimage.SI (ScanImage)
 
 % Global microscope properties
-objectiveResolution = 27.5;     % Resolution of the objective in microns/degree of scan angle
+objectiveResolution = 40.75;     % Resolution of the objective in microns/degree of scan angle
 
 % Data file location
 
@@ -16,11 +16,14 @@ fieldCurvatureRxs = [];     % Field curvature for mesoscope
 fieldCurvatureRys = [];     % Field curvature for mesoscope
 useJsonHeaderFormat = false;     % Use JSON format for TIFF file header
 
+fieldCurvatureTip = 0;
+fieldCurvatureTilt = 0;
+
 %% scanimage.components.Motors (SI Motors)
 % SI Stage/Motor Component.
 motorXYZ = {'ScopeHolder' 'ScopeHolder' 'ScopeHolder'};     % Defines the motor for ScanImage axes X Y Z.
-motorAxisXYZ = [1 3 2];     % Defines the motor axis used for Scanimage axes X Y Z.
-scaleXYZ = [-1 -1 -1];     % Defines scaling factors for axes.
+motorAxisXYZ = [2 1 3];     % Defines the motor axis used for Scanimage axes X Y Z.
+scaleXYZ = [1 -1 1];     % Defines scaling factors for axes.
 backlashCompensation = [0 0 0];     % Backlash compensation in um (positive or negative)
 
 %% scanimage.components.scan2d.RggScan (MINI2P_001)
@@ -87,6 +90,9 @@ scannerToRefTransform = [1 0 0;0 1 0;0 0 1];
 virtualChannelSettings = [];
 LaserTriggerDebounceTicks = 1;
 
+enableHostPixelCorrection = false;
+hostPixelCorrectionMultiplier = 500;
+
 %% dabs.generic.DigitalShutter (Laser)
 DOControl = '/vDAQ0/D0.0';     % control terminal  e.g. '/vDAQ0/DIO0'
 invertOutput = false;     % invert output drive signal to shutter
@@ -118,8 +124,8 @@ calibrationOpenShutters = {};     % List of shutters to open during the calibrat
 powerFractionLimit = 1;     % Maximum allowed power fraction (between 0 and 1)
 
 % Calibration data
-powerFraction2ModulationVoltLut = [0 0;0.0135 0.2;0.0523 0.4;0.1139 0.6;0.1975 0.8;0.3013 1;0.4219 1.2;0.5544 1.4;0.6979 1.6;0.8481 1.8;1 2];
-powerFraction2PowerWattLut = [0 0;1 118];
+powerFraction2ModulationVoltLut = [0 0;0.0135 0.2;0.0493 0.4;0.1078 0.6;0.1874 0.8;0.2892 1;0.4064 1.2;0.5531 1.4;0.7156 1.6;0.8354 1.8;1 2];
+powerFraction2PowerWattLut = [0 0;1 60.93];
 powerFraction2FeedbackVoltLut = zeros(0,2);
 feedbackOffset_V = 0;
 
@@ -155,7 +161,7 @@ voltsPerUm = -0.032;     % volts per micron
 voltsOffset = 0;     % volts that sets actuator to zero position
 
 % Calibration Data
-positionLUT = [-240 -267.5;-230 -240;-220 -220;-210 -202.5;-200 -190;-190 -179.375;-180 -170;-170 -160.417;-160 -149.583;-150 -138.75;-140 -130;-130 -122.5;-120 -115;-110 -105.208;-100 -97.9167;-90 -90;-80 -82.5;-70 -73.75;-60 -65.625;-50 -57.5;-40 -50;-30 -40;-20 -30;-10 -16.25;0 0];     % Position LUT
+positionLUT = [-240 -267.5;-220 -246.25;-200 -225;-180 -201.25;-150 -168.75;-140 -159.167;-130 -147.083;-120 -137.5;-110 -128.958;-100 -120.417;-90 -108.75;-80 -98.125;-70 -90;-60 -80.625;-50 -72.5;-40 -61.25;-30 -50;-20 -36.25;-10 -20;0 0];     % Position LUT
 feedbackVoltLUT = zeros(0,2);     % [Nx2] lut translating feedback volts into position volts
 
 %% dabs.mirrorcle.ResonantAxis (MEMS5600Hz)
@@ -168,16 +174,16 @@ inputVoltageRange_Vpp = 10;     % Max input voltage range of the controller
 angularRange_deg = 12;     % Max angular range of the device
 
 % Default scan settings
-syncPhase_deg = 100;
-rampTime_s = 0;
-xFilterClockFreq_Hz = 800000;
-yFilterClockFreq_Hz = 300000;
+syncPhase_deg = 350;
+rampTime_s = 1;
+xFilterClockFreq_Hz = 500000;
+yFilterClockFreq_Hz = 100000;
 xFilterClockEnable = 1;
 yFilterClockEnable = 1;
 nominalFrequency_Hz = 5600;
 
 % Calibration Settings
-amplitudeToLinePhaseMap = [3 4.088e-06;6 4.24e-06;8 4.296e-06;10 4.472e-06;10.385 4.44e-06;11.25 5.064e-06;11.5 5.52e-06;12 5.528e-06;12.273 5.488e-06;13 5.536e-06;13.5 5.536e-06];     % translates an amplitude (degrees) to a line phase (seconds)
+amplitudeToLinePhaseMap = [3 4.088e-06;6 3.976e-06;6.25 4.008e-06;8 4.296e-06;8.571 4.032e-06;10 -1.648e-06;10.385 4.44e-06;10.909 1.58e-05;11.25 5.064e-06;12 -1.6e-06;12.273 5.488e-06;12.5 4.088e-06;13 5.392e-06;13.5 5.432e-06];     % translates an amplitude (degrees) to a line phase (seconds)
 amplitudeLUT = zeros(0,2);     % translates a nominal amplitude (degrees) to an output amplitude (degrees)
 
 %% dabs.generic.GalvoPureAnalog (MEMS5600Hz_slowaxis)
@@ -186,11 +192,23 @@ AOOffset = '';     % control terminal  e.g. '/vDAQ0/AO0'
 AIFeedback = '';     % feedback terminal e.g. '/vDAQ0/AI0'
 
 angularRange = 12;     % total angular range in optical degrees (e.g. for a galvo with -20..+20 optical degrees, enter 40)
-voltsPerOpticalDegrees = 1;     % volts per optical degrees for the control signal
+voltsPerOpticalDegrees = 1.35;     % volts per optical degrees for the control signal
 parkPosition = 0;     % park position in optical degrees
 slewRateLimit = Inf;     % Slew rate limit of the analog output in Volts per second
 
 % Calibration settings
 feedbackVoltLUT = zeros(0,2);     % [Nx2] lut translating feedback volts into position volts
 offsetVoltScaling = 1;     % scalar factor for offset volts
+
+voltsOffset = 0;
+
+%% dabs.mini2p.MINI2P (MINI2P_VOLT)
+transformMatrixDirectory = 'C:\Recordings\VOLT\MINI2P_12KHz\FOV callibration\Transform matrix\5600HZ_FOV1_512_00001_TransformMatrix_MINI2P_VOLT0.1_1.0_0602112653.mat';     % transform Matrix Directory terminal  e.g. 'C:\Users\'
+system = 'MINI2P_VOLT0.1';     % Name of the system  e.g. 'System_001'
+scope = 'MINI2P_VOLT0.1';     % Name of the scope  e.g. 'MINI2P-L_001'
+objective = 'D0309';     % Type of the objective  e.g. 'D0233'
+
+%% scanimage.components.CoordinateSystems (SI CoordinateSystems)
+% SI Coordinate System Component.
+classDataFileName = 'default-CoordinateSystems_classData.mat';     % File containing the previously generated alignment data corresponding to the currently installed objective, SLM, scanners, etc.
 
