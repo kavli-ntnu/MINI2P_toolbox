@@ -20,11 +20,11 @@ MINI2P_toolbox includes the codes, softwares, 3D models, protocols, and etc. for
    [Protocols overview](https://github.com/kavli-ntnu/MINI2P_toolbox/blob/4218136165635862d5b9dbae0b64846168a1e40a/Protocols/P0%20-%20Protocols%20Overview%20.pdf) including video-tutorial links.
    [Contact Information](https://github.com/kavli-ntnu/MINI2P_toolbox/blob/main/Protocols/Company%20contact%20information.pdf) for custom-made products.
    
+
     a) [P1–Shopping and Machining list](https://github.com/kavli-ntnu/MINI2P_toolbox/blob/main/Protocols/P1%20-%20Shopping%20Machining%20List%202023%20.pdf). This document lists each essential component with the supplier, the product name, the model (or item reference) and its approximate price in Euro. An [alternative list] is also available considering a laser with coupled fiber ('Plug & Play solution', item 129) and with around 30 items removed that are no longer needed for HC-920 fiber assembly.
     2D Drawings and 3D models of most components are available [here](https://github.com/kavli-ntnu/MINI2P_toolbox/tree/main/Hardware).
 
-    b) [P2-System building protocol](https://github.com/kavli-ntnu/MINI2P_toolbox/blob/4218136165635862d5b9dbae0b64846168a1e40a/Protocols/P2%20-%20System%20building%20protocol%202023%20.pdf). This protocol includes all steps to assemble a MINI2P system. Each Protocol starts with a short-list of main reagents and tools needed, followed by an overview schematic of the module, and  a table with the main products.
-       HC-920 assembly building and laser coupling video tutorial can be found on the [link](https://www.youtube.com/watch?v=HjAtoPbDu8E).
+    b) [P2-System building protocol](https://github.com/kavli-ntnu/MINI2P_toolbox/blob/4218136165635862d5b9dbae0b64846168a1e40a/Protocols/P2%20-%20System%20building%20protocol%202023%20.pdf). This protocol includes all steps to assemble a MINI2P system. Each Protocol starts with a short-list of main reagents and tools needed, followed by an overview schematic of the module, and a table with the main products. HC-920 assembly building and laser coupling video tutorial can be found on the [link](https://www.youtube.com/watch?v=HjAtoPbDu8E).
    
    [![HC-920 Fiber Assembly & Integration tutorial video](http://img.youtube.com/vi/vo_EgYPYI24/2.jpg)](https://www.youtube.com/watch?v=vo_EgYPYI24&list=PLonWNO9SywvJXpIgQEp6jQMSh_jrn_jPU&index=4&t=457s)
 
